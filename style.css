@@ -14,6 +14,7 @@ body {
   min-height: 100%;
 }
 .content {
+  top: 0px;
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -37,7 +38,7 @@ ul.topnav li a {
 ul.topnav li a:hover:not(.active) {background-color: #000;}
 ul.topnav li a.active {background-color: #000;}
 ul.topnav li.right {float: right;}
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
   ul.topnav li.right, 
   ul.topnav li {float: none;}
 }
