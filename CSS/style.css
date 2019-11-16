@@ -1,7 +1,28 @@
 * {
-font-family: Verdana, Helvetica, sans-serif;
+  box-sizing: border-box;
 }
-body {margin: 0;}
+
+body {
+  margin: 0;
+  font-family: Verdana, Helvetica, sans-serif;
+  font-size: 17px;
+}
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+}
+
+.content {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+}
+
 ul.topnav {
   list-style-type: none;
   margin: 0;
