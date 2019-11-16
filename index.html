@@ -10,10 +10,10 @@
 
 <body>
 
-  <!--Video Background-->
-  <video autoplay muted loop id="myVideo">
-   <source src="img/background.mp4" type="video/mp4">
-  </video>
+<!--Video Background-->
+<video autoplay muted loop id="myVideo">
+  <source src="img/background.mp4" type="video/mp4">
+</video>
 
 <!--Able to manipulate the attributes of the content-->  
 <div class="content">
@@ -25,20 +25,28 @@
 		<div style="display:inline-block;">
       <h4>PIERCE MILLER</h4>
     </div>
-    <p style="float:right"> (+64) 21 129 7248 | <a href="mailto: piercemiller23@gmail.com">piercemiller23@gmail.com</a></p>
+    <br>
+    
     <!--Navigation Bar Items-->
-	<ul class="topnav">
-		<li><a class="active" href="#home">Home</a></li>
-		<li><a href="#about">About</a></li>		
-    <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#programming-languages">Programming Languages</a></li>
+    <ul class="topnav">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#languages">Programming Languages</a></li>
+        <div class="topNavRight">
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#resume">Resume</a></li>
+          <li class="icon">
+              <a href="javascript:void(0);" style="font-size:15px;" onclick="navBar()">☰</a>
+          </li>
+        </div>
+      </ul>
 
-      <li class="right"><a href="#resume">Resume</a></li>
-    </ul>
-    <br><br>
+      <!--Seperate Top Nav from Content-->
+      <br><br><br><br>
 
-    <!--Introduction to Portfolio-->
-  <center>
+  <!--Introduction to Portfolio-->
+  <div class="center">
 		<img src="img/ic_profile.png" alt="pierce" width="160" height="250"/>
     <p><strong>Hi there! My name is Pierce Miller</strong></p>
     <p>I'm a Computer Information Science graduate, specializing in Software Development</p>
@@ -46,7 +54,13 @@
     <img src="img/ic_breaker.png" alt="breaker" width="70" height="40"/>
     <br>
     <p>Please feel free to look around by using the navigation menu above</p>
-  </center>
+  </div>
+
+  <script>
+      function navBar() {
+          document.getElementsByClassName("topnav")[0].classList.toggle("responsive");
+      }
+  </script>
 
 </div>
 </body>
