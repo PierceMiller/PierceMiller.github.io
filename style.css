@@ -4,7 +4,12 @@
 body {
   margin: 0;
   font-family: Verdana, Helvetica, sans-serif;
-  font-size: 17px;
+  font-size: 18px;
+}
+
+strong {
+  font-size: 25px;
+  font-style: italic;
 }
 #myVideo {
   position: fixed;
