@@ -8,11 +8,11 @@ background-color: #E1E1E1;
 body {
   margin: 0;
   font-family: Verdana, Helvetica, sans-serif;
-  font-size: 20px;
+  font-size: 17px;
 }
 
 strong {
-  font-size: 25x;
+  font-size: 26px;
   font-style: italic;
 }
 p {
@@ -66,10 +66,10 @@ ul.topnav li a:hover {background-color: #111;}
 ul.topnav li a.active {background-color: #000;}
 ul.topnav li.icon {display: none;}
 
-@media screen and (max-width:680px) {
+@media screen and (max-width:855px) {
   ul.topnav li:not(:first-child) {display: none;}
   ul.topnav li.icon {
-    float: right;
+    float: left;
     display: inline-block;
   }
 }

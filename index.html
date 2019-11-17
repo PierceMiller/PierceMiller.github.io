@@ -10,6 +10,8 @@
 
 <body>
 
+    <script src = "navigation.js"></script>
+
 <!--Video Background-->
 <video autoplay muted loop id="myVideo">
   <source src="img/background.mp4" type="video/mp4">
@@ -29,16 +31,17 @@
     
     <!--Navigation Bar Items-->
     <ul class="topnav">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#languages">Programming Languages</a></li>
+        <li class="icon">
+            <a href="javascript:void(0);" style="font-size:15px;" onclick="navBar()">☰</a>
+        </li>
+        <li><a href="#home">HOME</a></li>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#portfolio">PORTFOLIO</a></li>
+        <li><a href="#languages">PROGRAMMING LANGUAGES</a></li>
+        <li><a href="#resume">RESUME</a></li>
         <div class="topNavRight">
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#resume">Resume</a></li>
-          <li class="icon">
-              <a href="javascript:void(0);" style="font-size:15px;" onclick="navBar()">☰</a>
-          </li>
+          <li><a href="#contact">CONTACT</a></li>
+
         </div>
       </ul>
 
@@ -54,12 +57,6 @@
     <br>
     <p>Please feel free to look around by using the navigation menu above</p>
   </div>
-
-  <script>
-      function navBar() {
-          document.getElementsByClassName("topnav")[0].classList.toggle("responsive");
-      }
-  </script>
 
 </div>
 </body>
