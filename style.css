@@ -74,7 +74,7 @@ ul.topnav li.icon {display: none;}
   }
 }
 
-@media screen and (max-width:680px) {
+@media screen and (max-width:855px) {
   ul.topnav.responsive {position: relative;}
   ul.topnav.responsive li.icon {
     left: 0;
