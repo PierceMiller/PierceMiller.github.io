@@ -2,59 +2,58 @@
 <html>
 
 <head>
-	<title>Portfolio</title>
+  <title>Pierce Miller</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel = "stylesheet" type = "text/css" href = "style.css" />
+  <link rel="stylesheet" type="text/css" href="css/animate.css" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
   <link rel="icon" href="img/ic_icon2.ico" />
 </head>
 
-<body>
+<body onload="document.body.classList.add('loaded')">
 
-  <!--Video Background-->
-  <section id="home">
-    <video src="img/Beach.mp4" id="home-bg-video"
-    autoplay loop muted></video>
-  </section>
-
-  <!--Able to manipulate the attributes of the content-->  
-  <div class="content">
+  <!--Able to manipulate the attributes of the content-->
+  <div id="content">
 
     <!--Main title and Image-->
-	  <div style="display:inline-block; vertical-align:top;">
-        <img src="img/ic_icon2.png" alt="PM" width="40" height="50" style="float: left"/>
-        <div class="title">
-            <h4>PIERCE MILLER</h4>
-        </div>
+    <div style="display:inline-block; vertical-align:top;">
+      <img src="img/ic_icon2.png" alt="PM" width="40" height="50" style="float: left" />
+      <div class="title">
+        <h4>PIERCE MILLER</h4>
+      </div>
     </div>
+
     <br>
 
-    <div id="home-overlay">
+    <div id="home-overlay" class="animated bounce">
       <div class="container">
         <div id="home-content">
           <div class="text-left" id="home-content-inner">
             <div id="home-heading">
-              <img src="img/ic_profile.jpg" alt="PM" width="200" height="200" style="float: left; padding: 15px;"/>
+              <img src="img/ic_profile.jpg" alt="PM" width="200" height="200" style="float: left; padding: 15px;  transition: 0.5s;" />
               <h1 id="home-heading-1">Pierce</h1>
               <h1 id="home-heading-2">Miller
-              <span>Portfolio</span></h1>
+                <span>Portfolio</span></h1>
             </div>
             <div id="home-text">
               <p>
                 I'm a Computer Science graduate,
-                specializing in Software Development<br>
+                majoring in Software Development<br>
                 Where I studied at the Auckland University
                 of Technology
               </p>
             </div>
-            <div id="home-bt">
-                <button class="button" type="button"><span>Under Constuction</span></button>
-            </div>
-            </div>
           </div>
+        </div>
+        <div id="home-bt">
+          <a href="about.html">
+              <button class="button" type="button" id="more"><span>More</span></button>
+          </a>
         </div>
       </div>
     </div>
+  </div>
 
 </body>
+
 </html>
