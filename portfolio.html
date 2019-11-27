@@ -5,14 +5,39 @@
         <title>Pierce Miller</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="css/animate.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
         <link rel="icon" href="img/ic_icon2.ico" />
+      
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
       </head>
 
 <body>
 
   <script src = "navigation.js"></script>
+
+        <!-- Modal -->
+        <div class="modal fade" id="phoneModal" role="dialog">
+            <div class="modal-dialog">
+            
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Feel free to ring anytime..</h4>
+                </div>
+                <div class="modal-body">
+                  <p>Mobile: (+64) 21 129 7248</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+              
+            </div>
+          </div>
 
   <!--Able to manipulate the attributes of the content-->  
   <div id="content" class="animated fadeIn">
@@ -24,7 +49,12 @@
           <h4>PIERCE MILLER</h4>
         </div>
       </div>
-      <br>
+      <a href="https://www.facebook.com/piercem23" class="fa fa-facebook" title="Pierce Miller"></a>
+      <a href="https://www.linkedin.com/in/pierce-miller/" class="fa fa-linkedin" title="Pierce Miller"></a>
+      <a href="mailto: piercemiller23@gmail.com" title="piercemiller23@gmail.com" class="fa fa-envelope"></a>
+      <button type="button" class="fa fa-phone" data-toggle="modal" data-target="#phoneModal" title="(+64) 21 129 7248"></button>
+  
+      <br><br>
     
     <!--Navigation Bar Items-->
     <div class="one-edge-shadow">
@@ -37,9 +67,6 @@
             <li><a class="active" href="portfolio.html">PORTFOLIO</a></li>
             <li><a href="languages.html">PROGRAMMING LANGUAGES</a></li>
             <li><a href="img/Pierce Miller.pdf">RESUME</a></li>
-            <div class="topNavRight">
-              <li><a href="contact.html">CONTACT</a></li>
-            </div>
           </ul>
     </div>
 

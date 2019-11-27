@@ -7,18 +7,35 @@ background-color: rgb(0, 0, 0);
 
 body{
   font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
-  font-style: normal; font-variant: normal; 
-  font-weight: 700; 
-  background-image: url('https://win10faq.com/wp-content/uploads/2018/01/giphy-2.gif');
+  font-style: normal; font-variant: normal;
+  background-image: url('https://img.wallpapersafari.com/desktop/1920/1080/84/39/AyNifp.gif');
   background-size: cover;
   height: 100vh;
-  padding:0;
-  margin:0;
 }
 
 /* Hide slider image until page is fully loaded*/
 body:not(.loaded) #slider img {
   display:none;
+}
+
+.fa {
+  padding: 20px;
+  font-size: 20px;
+  width: 50px;
+  line-height: 20px;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  margin: 5px 5px;
+}
+
+.indexImage {
+  width: 200px;
+  height: 200px;
+  padding: 15px;
+  float: left;
+  transition: 1s;
+  border-radius: 20px;
 }
 
 #content {
@@ -99,6 +116,7 @@ div.center {
 }*/
 
 .one-edge-shadow {
+  border-radius: 20px;
 	-webkit-box-shadow: 0 8px 6px -6px black;
 	   -moz-box-shadow: 0 8px 6px -6px black;
 	        box-shadow: 0 8px 6px -6px black;
@@ -134,6 +152,7 @@ ul.topnav {
   font-weight: 100;
   margin: 0;
   padding: 0;
+  border-radius: 20px;
   overflow: hidden;
   background: rgba(0,0,0,0.5);
 }
@@ -150,8 +169,11 @@ ul.topnav li a {
   font-size: 17px;
 }
 
-ul.topnav li a:hover {background: rgba(0,0,0,0.5);}
-ul.topnav li a.active {background: rgba(0,0,0,0.5);}
+ul.topnav li a:hover {
+  background: #e4b419;
+  transition: 1s;
+}
+ul.topnav li a.active {background: #097409}
 ul.topnav li.icon {display: none;}
 
 @media screen and (max-width:890px) {
@@ -226,4 +248,74 @@ ul.topnav li.icon {display: none;}
 .button:hover span:after {
   opacity: 1;
   right: 0;
+}
+
+.fa:hover {
+  background-color: #097409;
+  text-decoration: none;
+  color: white;
+  transition: 0.5s;
+}
+
+.fa-facebook {
+  background-color: #e4b419;
+  border-radius: 20px;
+  color: white;
+  float: right;
+}
+
+.fa-linkedin {
+  background-color: #e4b419;
+  border-radius: 20px;
+  color: white;
+  float: right;
+}
+
+.fa-envelope {
+  background-color: #e4b419;
+  border-radius: 20px;
+  color: white;
+  float: right;
+}
+
+.fa-phone {
+  background-color: #e4b419;
+  border-radius: 20px;
+  color: white;
+  float: right;
+}
+
+table {
+  width:80vw;
+  margin: auto;
+  color: white;
+}
+table, th, td {
+  border-collapse: collapse;
+}
+th { 
+font-size: 20px;
+font-size: 20px;
+text-align: left;
+}
+
+th, td {
+  padding: 15px;
+  border:none;
+}
+
+td {
+  text-align: center;
+  font-size: 16px;
+}
+
+ta {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.languageImages {
+  width: 100px;
+  height: 100px;
 }
