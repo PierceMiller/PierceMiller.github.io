@@ -17,6 +17,7 @@
 <body>
 
   <script src = "navigation.js"></script>
+  <script src = "scrollUpBtn.js"></script>
 
       <!-- Modal -->
       <div class="modal fade" id="phoneModal" role="dialog">
@@ -35,7 +36,6 @@
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
               </div>
             </div>
-            
           </div>
         </div>
 
@@ -52,7 +52,7 @@
       <a href="https://www.facebook.com/piercem23" class="fa fa-facebook" title="Pierce Miller"></a>
       <a href="https://www.linkedin.com/in/pierce-miller/" class="fa fa-linkedin" title="Pierce Miller"></a>
       <a href="mailto: piercemiller23@gmail.com" title="piercemiller23@gmail.com" class="fa fa-envelope"></a>
-      <button type="button" class="fa fa-phone" data-toggle="modal" data-target="#phoneModal" title="(+64) 21 129 7248"></button>
+      <a class="fa fa-phone" data-toggle="modal" data-target="#phoneModal" title="(+64) 21 129 7248"></a>
   
       <br><br>
     
@@ -60,7 +60,7 @@
     <div class="one-edge-shadow">
         <ul class="topnav">
             <li class="icon">
-                <a href="javascript:void(0);" style="font-size:15px;" onclick="navBar()">☰ MENU</a>
+                <a href="javascript:void(0);" style="font-size:15px;" onclick="navBar()"><img src="img/ic_menu.png" width="20" height="20"> MENU</a>
             </li>
             <li><a href="index.html">HOME</a></li>
             <li><a class="active" href="about.html">ABOUT</a></li>
@@ -84,18 +84,20 @@
             <br>
             <h3>Auckland University<br>of Technology<br>(Auckland, New Zealand)</h3>
             <br>
-            <ta>Currently living in: Auckland, New Zealand</ta>
+            <ta>Currently living in:</ta>
             <br><br>
             <img src="img/ic_nz.png" width=200 height=100>
+            <h3>Auckland, New Zealand</h3>
             <br><br>
             <ta>Experience:</ta>
             <br>
             <img src="img/ic_smartpay.png" width=200 height=80>
             
             <h3>Internship at SmartPay NZ</h3>
-            <p>Started: March 2019 - Nov 2019</p>
+            <p>Started: Mar 2019 - Nov 2019</p>
+            <li>Assist on the re-development of their web based support system</li>
             <li>Served as the Project Manager over the other Interns</li>
-            <li>Assist on the re-development of SmartPays web based support system</li>
+
             <br>
             <ta>Licences:</ta>
             <br><br>
@@ -106,12 +108,22 @@
           </td>
         </tr>
       </table>
+      <br><br><br><br>
 
-
-
-
-
-
+      <div class="one-edge-shadow">
+          <div class="footer">
+              <div class="footerContact">
+                  <p>Email: <a href="mailto: piercemiller23@gmail.com">piercemiller23@gmail.com</a></p>
+                  <p>Mobile (+64) 21 129 7248</p>
+              </div>
+              <div style="display:inline-block; vertical-align:top;">
+                <img src="img/ic_icon2.png" alt="PM" width="40" height="50" style="float: left" />
+                  <div class="title">
+                    <h4>PIERCE MILLER <img src="img/ic_copyright.png" width="20" height="20"> 2018 - 2019</h4>
+                  </div>
+              </div>
+          </div>
+      </div>
     </div>
     </body>
     </html>
