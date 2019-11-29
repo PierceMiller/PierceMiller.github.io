@@ -13,12 +13,14 @@ body{
   height: 100vh;
 }
 
+html,body { overflow-x: hidden }
+
 .indexImage {
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   padding: 15px;
   float: left;
-  transition: 1s;
+  transition: 2s;
   border-radius: 20px;
 }
 
@@ -54,9 +56,10 @@ body{
 
 #home-heading h1{
   color: white;
-  font-size: 65px;
+  font-size: calc(3vw + 3vh + .5vmin);
   font-weight: 700;
   text-transform: uppercase;
+  vertical-align: auto;
   margin: 0;
   transition: 0.5s;
 }
@@ -70,7 +73,6 @@ body{
 #home-heading h1 span:hover {
   color: #097409;
 }
-
 
 #home-text p {
   color: white;
@@ -301,8 +303,12 @@ a.fa-phone:hover {font-size:300%;}
   a.fa-phone { display:none; }
 }
 
+.textToTheLeft {
+  text-align: left !important;
+}
+
 table {
-  width:100%;
+  width:60%;
   margin: auto;
   color: white;
   background:rgba(255,255,255,0.1);
@@ -316,6 +322,23 @@ table, th, td {
 th { 
 text-align: left;
 color: #e4b419;
+}
+
+iframe {
+  width: 21vw; 
+  height: 21vh;
+  overflow: hidden;
+}
+
+object {
+  width: 21vw; 
+  height: 21vh;
+  overflow: hidden;
+}
+
+.pokeSouth {
+  width: 21vw; 
+  height: 21vh;
 }
 
 th, td {
@@ -390,11 +413,25 @@ ta:hover {
     color: white;
     transition: 1s;
   }
+  iframe {  
+    width: 200px; 
+    height: 100px;
+  }
+  object {  
+    width: 200px; 
+    height: 100px;
+  }
 }
-@media screen and (max-width:800px) {
+@media screen and (max-width:1000px) {
+  #home-text {display: none;}
+  #home-heading h1{font-size: 40px;}
+  table {width: 100%}
   .footer {text-align: center;}
   .footerContact {display: none;}
-  #home-text {display: none;}
+  .indexImage{
+    width: 150px;
+    height: 150px;
+  }
 }
 @media screen and (max-width: 600px){
   .footer {box-shadow: 10px -10px white;}
