@@ -397,6 +397,12 @@ ta:hover {
  float: right;
 }
 @media screen and (max-width: 1300px){
+  #home-text {display: none;}
+  #home-heading h1{font-size: 40px;}
+  .indexImage{
+    width: 150px;
+    height: 150px;
+  }
   .footer {box-shadow: 10px -10px #e4b419;}
   ul.topnav {box-shadow: 10px 10px #e4b419;}
   ul.topnav li a.active {
@@ -425,21 +431,11 @@ ta:hover {
     width: 200px; 
     height: 100px;
   }
-  object {  
-    width: 200px; 
-    height: 100px;
-  }
 }
 @media screen and (max-width:1000px) {
-  #home-text {display: none;}
-  #home-heading h1{font-size: 40px;}
   table {width: 100%}
   .footer {text-align: center;}
   .footerContact {display: none;}
-  .indexImage{
-    width: 150px;
-    height: 150px;
-  }
 }
 @media screen and (max-width: 600px){
   .footer {box-shadow: 10px -10px white;}
