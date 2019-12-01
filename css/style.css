@@ -363,11 +363,8 @@ ta:hover {
 .footerContact {
  float: right;
 }
-@media screen and (max-width:500px) {
-  a.fa-facebook { display:none; }
-  a.fa-linkedin { display:none; }
-  a.fa-envelope { display:none; }
-  a.fa-phone { display:none; }
+@media screen and (max-width:580px) {
+  .fa{display:none;}
 }
 @media screen and (max-width: 1300px){
   .footer {box-shadow: 10px -10px #e4b419;}
