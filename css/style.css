@@ -257,6 +257,10 @@ ul.topnav li.icon {display: none;}
   background-color: #0077B5;
 }
 
+.fa-github:hover {
+  background-color: #6E5494;
+}
+
 .fa-envelope:hover {
   background-color: #1F64AF;
   }
@@ -267,6 +271,7 @@ ul.topnav li.icon {display: none;}
 
 a.fa-facebook:hover {font-size:300%;}
 a.fa-linkedin:hover {font-size:300%;}
+a.fa-github:hover {font-size:300%;}
 a.fa-envelope:hover {font-size:300%;}
 a.fa-phone:hover {font-size:300%;}
 .textToTheLeft {
