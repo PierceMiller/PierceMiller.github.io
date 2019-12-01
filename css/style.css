@@ -295,13 +295,7 @@ text-align: left;
 color: #e4b419;
 }
 
-object {
-  width: 21vw; 
-  height: 21vh;
-  overflow: hidden;
-}
-
-object {
+iframe {
   width: 21vw; 
   height: 21vh;
   overflow: hidden;
@@ -399,7 +393,7 @@ ta:hover {
     color: white;
     transition: 1s;
   }
-  object {  
+  iframe {  
     width: 200px; 
     height: 100px;
   }
