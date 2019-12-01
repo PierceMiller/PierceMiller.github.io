@@ -250,7 +250,7 @@ ul.topnav li.icon {display: none;}
 }
 
 .fa-facebook:hover {
-  background-color: #3b5998;
+  background-color: #3B5998;
 }
 
 .fa-linkedin:hover {
@@ -407,6 +407,11 @@ ta:hover {
     background: #097409;
     color: white;
   }
+  a.fa-facebook:hover {font-size:220%;}
+  a.fa-linkedin:hover {font-size:220%;}
+  a.fa-github:hover {font-size:220%;}
+  a.fa-envelope:hover {font-size:220%;}
+  a.fa-phone:hover {font-size:220%;}
 }
 @media screen and (max-width:1000px) {
   #home-text {display: none;}
