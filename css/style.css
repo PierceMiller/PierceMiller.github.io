@@ -36,7 +36,7 @@ html,body { overflow: hidden }
 }
 
 .animation-area {
-  background: linear-gradient(to right,#C2AB82, #D73C40,#660139);
+  background: linear-gradient(to right,	#212832, #393D46,#01ADB5,#ECEFEF);
   width: 100%;
   height: 100vh;
 }
@@ -185,7 +185,8 @@ html,body { overflow: hidden }
   text-align: left;
   padding-left: 50px;
   position: fixed; 
-  background: linear-gradient(to right,#C2AB82, #D73C40,#660139);
+  background: linear-gradient(to right,	#212832, #393D46,#01ADB5,#ECEFEF);
+
 }
 
 div.center {
@@ -232,7 +233,8 @@ ul.topnav {
   overflow: hidden;
   transition: 0.5s;
   position: fixed; 
-  background: linear-gradient(to right,#C2AB82, #D73C40,#660139);
+  background: linear-gradient(to right,	#212832, #393D46,#01ADB5,#ECEFEF);
+
   border-radius: 30px;
   box-shadow: 10px 8px white;
 }
@@ -330,8 +332,8 @@ ul.topnav li.icon {
   margin: 0;
   object-fit: scale-down;
   transition: 0.5s;
-  background:rgba(255,255,255,0.1);
-  color: #ffffff;
+  background:rgba(255,255,255,0.3);
+  color: #01ADB5;
   border-top-left-radius:  20px;
   border-bottom-left-radius:  20px;
 
