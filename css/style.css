@@ -251,15 +251,13 @@ ul.topnav li a {
 }
 
 ul.topnav li a:hover {
-  background: rgba(0,0,0,0.05);
   border-radius: 20px;
-  color:  white;
+  color: #ADD8E6;
   transition: 1s;
 }
 ul.topnav li a.active {
-  background: rgba(0,0,0,0.05);
   border-radius: 20px;
-  color:  white;
+  color: #ADD8E6;
 }
 ul.topnav li.icon {
   display: none;
@@ -459,7 +457,7 @@ ta {
   font-variant: normal; 
   font-weight: 1000; 
   line-height: 26.4px; 
-  color: #ffffff;
+  color: #01ADB5;
  float: right;
 }
 @media screen and (max-width: 1300px){
