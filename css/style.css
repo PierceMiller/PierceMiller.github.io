@@ -397,6 +397,12 @@ iframe {
   overflow: hidden;
 }
 
+.scrollPlease img {
+  width: 21vw; 
+  height: 21vh;
+  overflow: hidden;
+} 
+
 .pokeSouth {
   width: 21vw; 
   height: 21vh;
@@ -470,6 +476,11 @@ ta {
     width: 200px; 
     height: 100px;
   }
+
+  .scrollPlease img {
+    width: 200px; 
+    height: 100px;
+  } 
 
   a.fa-facebook:hover {font-size:220%;}
   a.fa-linkedin:hover {font-size:220%;}
