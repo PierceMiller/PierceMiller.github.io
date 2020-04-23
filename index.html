@@ -1,97 +1,311 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <title>Pierce Miller</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="css/animate.css" />
-  <link rel="stylesheet" type="text/css" href="css/style.css" />
-  <link rel="icon" href="img/favicon/ic_icon2.ico" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pierce Miller</title>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link href='http://fonts.googleapis.com/css?family=Berkshire+Swash' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="main.css">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+
 </head>
+<body>
+    <a href="#" id="scroll"><span></span></a>
+    <div class="animation-area">
+        <ul class="box-area">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+    </div>
 
-<body onload="document.body.classList.add('loaded')">
+    <div id="content" class="animated fadeIn">
 
-    <!-- Modal -->
-    <div class="modal fade" id="phoneModal" role="dialog">
-        <div class="modal-dialog">
-        
-          <!-- Modal content-->
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h4 class="modal-title">Feel free to ring anytime..</h4>
-            </div>
-            <div class="modal-body">
-              <p>Mobile: (+64) 21 129 7248</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-          
+<!--HEADER-->
+
+    <header>
+        <div id="top"></div>
+        <div class="menu-toggler" id="menu-toggler">
+            <div class="bar half start"></div>
+            <div class="bar"></div>
+            <div class="bar half end"></div>
         </div>
-      </div>
-
-      <div class="animation-area">
-          <ul class="box-area">
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
+        <nav class="top-nav">
+            <ul class="nav-list column">
+                <li>
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li>
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li>
+                    <a href="#services" class="nav-link">Development</a>
+                </li>
+                <li>
+                    <a href="#portfolio" class="nav-link">Portfolio</a>
+                </li>
+                <li>
+                    <a href="#experience" class="nav-link">Experience</a>
+                </li>
+                <li>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
             </ul>
-      </div>
+        </nav>
+        <div class="landing-text main" id="landing-text">
+            <h1>Pierce Miller</h1>
+            <h6>Graduate Software and</h6>
+            <h6>Freelance Web Developer</h6>
+            <button><a href="#about">Read More</a></button>
 
-  <!--Able to manipulate the attributes of the content-->
-  <div id="content">
-
-    <!--Main title and Image-->
-    <div class="mainTitle">
-        <div style="display:inline-block; vertical-align:top;">
-            <img src="img/general/ic_icon2.png" alt="PM" width="40" height="50" style="float: left" />
-            <div class="title">
-              <h4>PIERCE MILLER</h4>
-            </div>
-          </div>
-    </div>
-    <a href="https://www.facebook.com/piercem23" class="fa fa-facebook" title="Facebook"></a>
-    <a href="https://www.linkedin.com/in/pierce-miller/" class="fa fa-linkedin" title="Linkedin"></a>
-    <a href="https://github.com/PierceMiller" class="fa fa-github" title="GitHub"></a>
-    <a href="mailto: piercemiller23@gmail.com" class="fa fa-envelope" title="piercemiller23@gmail.com"></a>
-    <a class="fa fa-phone" data-toggle="modal" data-target="#phoneModal" title="(+64) 21 129 7248"></a>
-
-    <div id="home-overlay" class="animated bounce">
-      <div class="container">
-        <div id="home-content">
-          <div class="text-left" id="home-content-inner">
-            <div id="home-heading">
-              <img src="img/about/ic_profile.jpg" alt="PM" class="indexImage" />
-              <h1 id="home-heading-1">Pierce</h1>
-              <h1 id="home-heading-2">Miller<span> Portfolio</span></h1>
-            </div>
-            <div id="home-text">
-              <p>
-                  I am a creative and innovative person who enjoys working within a team,<br>  
-                  who is always looking to develop my knowledge and skill level.
-              </p>
-            </div>
-          </div>
         </div>
-        <br>
-        <div id="home-bt">
-          <a href="public/about.html">
-              <button class="button" type="button" id="more"><span>More</span></button>
-          </a>
+    </header>
+
+ <!--ABOUT-->   
+
+    <section class="about main" id="about">
+        <div class="container">
+            <div class="profile-img ">
+                <img src="img/profile.jpg" alt="">
+            </div>
+            <div class="about-details">
+                <div class="about-heading">
+                    <h1>About</h1>
+                    <h6>Myself</h6>
+                </div>
+                <p>
+                    Hi im Pierce, I am a recent Graduate out of Auckland Univeristy of Technology, where I gained a Bachelor in Computer and Information Sciences. 
+                    Currently I am a Freelance Web Developer working on small time Front End projects for various clients and recently starting to work on Android applicaitons.
+                    Whether that be using frameworks like WordPress or a completely customized platform, I utilize a range of languages to achieve my tasks which can include 
+                    HTML, CSS, JavaScript, Java, PHP, MySQL and many more...
+                    I am a creative and innovative person who enjoys working on a project and especially within a team, 
+                    where I am always looking to develop my knowledge and skill level.
+                </p>
+                <div class="social-media">
+                    <ul class="nav-list">
+                        <li>
+                            <a href="https://www.facebook.com/piercem23" class="icon-link">
+                                <i class="fab fa-facebook-square"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/PierceMiller" class="icon-link">
+                                <i class="fab fa-github-square"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/pierce-miller/" class="icon-link">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="img/Resume.pdf" class="icon-link" name="Resume">
+                                <i class="fa fa-paperclip" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-  </div>
+    </section>
+
+<!--SERVICES-->
+
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-heading">
+                <h1>Development</h1>
+                <h6>Just some things I like to do</h6>
+            </div>
+            <div class="my-skills">
+                <div class="skill">
+                    <div class="icon-container">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h1>Web Design | Development</h1>
+                    <p>
+                        Great website design inspires curiosity, which is one of the many reasons I enjoy working on projects that can compete into todays online market
+                    </p>
+                </div>
+                <div class="skill">
+                    <div class="icon-container">
+                        <i class="fa fa-database" aria-hidden="true"></i>
+                    </div>
+                    <h1>Database Management</h1>
+                    <p>
+                        Storing and encrypting files or passwords and creating an overall safe and dynamic site, are vital components in making sure users information are kept securely  
+                    </p>
+                </div>
+                <div class="skill">
+                    <div class="icon-container">
+                        <i class="fa fa-android"></i>
+                    </div>
+                    <h1>Android Development</h1>
+                    <p>
+                        In today's era, its easy to see that businesses cant rely on just one platform, so branching out into mobile development is a great decision. 
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <div class="section-heading">
+                <h1>Portfolio</h1>
+                <h6>Follow my <a href="https://github.com/PierceMiller" class="github">Github</a> for more projects</h6>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-img has-margin-right">
+                    <iframe src="https://www.youtube.com/embed/mtYnfL7LIL4" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="portfolio-description">
+                    <h6>Web Development | Database Managment</h6>
+                    <h1>BLOG WEBSITE</h1>
+                    <p>
+                        NRL Fantasy Lounge is a premiere NRL Fantasy community on social Media. This platform allows them to publish and store their articles easily, as well as editting them if need be. 
+                        Has a custom user system that communicates with a MySQL database that stores registered users, with their encrypted passwords.
+                    </p>
+                    <br>
+                    <a href="https://github.com/PierceMiller/NRLFL" class="cta">View Details</a>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-description has-margin-right">
+                    <h6>Android Development</h6>
+                    <h1>INFORMATIONAL APPLICATION</h1>
+                    <p>
+                        Mobile games is a huge business and in 2016 Pokemon Go took the world by storm. To help its players, PokeSouth provides an app that showcases useful information 
+                        right at their fingertips. 
+                    </p>
+                    <br>
+                    <a href="https://github.com/PierceMiller/PokeSouth" class="cta">View Details</a>
+                </div>
+                <div class="portfolio-img">
+                    <iframe src="https://www.youtube.com/embed/Yrsc7pFPv2c" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-img has-margin-right">
+                    <iframe src="https://www.youtube.com/embed/-GeLoJQ20DM" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="portfolio-description">
+                    <h6>Web Development</h6>
+                    <h1>GRAVITY MANIPULATING GAME</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet. consectetur adipisicing elit.
+                        Lorem ipsum dolor sit amet. consectetur adipisicing elit.
+                    </p>
+                    <br>
+                    <a href="#" class="cta">View Details</a>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-description has-margin-right">
+                    <h6>Web Development</h6>
+                    <h1>Status Posting Website</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet. consectetur adipisicing elit.
+                        Lorem ipsum dolor sit amet. consectetur adipisicing elit.
+                    </p>
+                    <br>
+                    <a href="#" class="cta">View Details</a>
+                </div>
+                <div class="portfolio-img">
+                    <iframe src="https://www.youtube.com/embed/k0iCGBz7W48" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-img has-margin-right">
+                    <iframe src="https://www.youtube.com/embed/-GeLoJQ20DM" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="portfolio-description">
+                    <h6>Android Development</h6>
+                    <h1>Quiz Application</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet. consectetur adipisicing elit.
+                        Lorem ipsum dolor sit amet. consectetur adipisicing elit.
+                    </p>
+                    <br>
+                    <a href="#" class="cta">View Details</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="experience" id="experience">
+        <div class="container">
+            <div class="section-heading">
+                <h1>Work Experience</h1>
+                <h6>Past and Current Jobs</h6>
+            </div>
+            <div class="timeline">
+                <ul>
+                    <li class="date" data-date="2019 - Present">
+                        <h1>Fiverr</h1>
+                        <p>
+                            Making websites for various clients whether that be using
+                              frameworks like WordPress or a completely customized platform
+                              that requires the use of: <br><br> 
+                              HTML, CSS, JS, MySQL and most of the time PHP
+
+                        </p>
+                    </li>
+                    <li class="date" data-date="2018 - 2019">
+                        <h1>SmartPay - Internship</h1>
+                        <p>
+                            Responsible in assisting them with the re-development of their
+                            front-end user interface (UI) for their web based technical
+                            support system<br><br>
+                            Served as the Project Manager over the other Interns. 
+
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-heading">
+                <h1>Contact</h1>
+                <h6>Like what you see? Say Hi and get in touch with me</h6>
+            </div>
+
+            <form action="https://formspree.io/mzbawbaj" method="POST">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="_replyto" placeholder="Enter your email here..." required>
+                <label for="email" class="message">Message:</label>
+                <textarea name="message" id="subject" cols="10" rows="10"></textarea>
+                <input type="submit" value="submit"></input>
+            </form>
+        </div>
+    </section>
+    <footer class="copyright">
+        <div class="up" id="up">
+            <a href="#top"><i class="fas fa-chevron-up"></i></a>
+        </div>
+        <p>&copy; 2020 Pierce Miller</p>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="main.js"></script>
+
+    <!--smooth-scroll-->
+    <script src="smooth-scroll.js"></script>
+    <script src="initialize-scroll.js"></script>
 </body>
 </html>
