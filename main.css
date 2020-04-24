@@ -381,6 +381,13 @@ li {
     flex: 1;
 }
 
+.fiverr {
+    margin-left: 15rem;
+    flex: 1;
+    width: 30%;
+    margin-top: 5rem;
+}
+
 .social-media {
     margin-top: 5rem;
 }
