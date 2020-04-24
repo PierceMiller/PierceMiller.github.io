@@ -610,7 +610,7 @@ textarea {
 input[type="submit"] {
     text-transform: uppercase;
     width: initial;
-    background-color: #FD57BF;
+    background-color: rgb(145, 50, 173);
     color: #eee;
     padding: 1rem 2rem;
     border-radius: .8rem;
@@ -620,7 +620,7 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
     color: #221e3f;
-    background-color: #FFE838;
+    background-color: rgb(187, 63, 224);
 }
 
 .copyright {
