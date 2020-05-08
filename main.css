@@ -13,7 +13,7 @@ html {
 body {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: sans-serif
 }
 
 /*body, html {
@@ -231,7 +231,7 @@ li {
 }
 
 .nav-link {
-    font-family: 'Berkshire Swash', Helvetica, sans-serif;
+    font-family: "Comic Sans MS", cursive, sans-serif;
     font-size: 5rem;
     padding: 1rem
 }
@@ -309,7 +309,7 @@ li {
 
 .landing-text h1 {
     font-size: 10rem;
-    font-family: 'Berkshire Swash', Helvetica, sans-serif;
+    font-family: "Comic Sans MS", cursive, sans-serif;
     background: linear-gradient(to top, #FFE838, #FD57BF);
     background-clip: text;
     -webkit-background-clip: text;
