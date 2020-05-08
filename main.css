@@ -522,6 +522,12 @@ li {
     text-decoration: underline;
 }
 
+.smartpayLink{
+    text-decoration: underline;
+    color: #FD57BF;
+
+}
+
 .timeline ul {
     border-left: 4px solid #FFE838;
     border-radius: .8rem;
