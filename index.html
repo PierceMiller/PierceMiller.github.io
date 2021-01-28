@@ -1,335 +1,546 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pierce Miller</title>
-
-
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
-    <link href='http://fonts.googleapis.com/css?family=Berkshire+Swash' rel='stylesheet' type='text/css'>
-    <link href="http://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="main.css">
-    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+  <title>Pierce Miller</title>
+  <link rel="icon" type="image/png" href="images/about.png"/>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!-- Template css Files -->
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+  <link rel="stylesheet" href="css/skins/pink.css" type="text/css">
+  
+  <!-- Live Style Switcher - Demo Only  -->
+  <link rel="stylesheet" class="alternate-style" title="pink" href="css/skins/pink.css" type="text/css" disabled>
+  <link rel="stylesheet" class="alternate-style" title="blue" href="css/skins/blue.css" type="text/css" disabled>
+  <link rel="stylesheet" class="alternate-style" title="orange" href="css/skins/orange.css" type="text/css" disabled>
+  <link rel="stylesheet" class="alternate-style" title="yellow" href="css/skins/yellow.css" type="text/css" disabled>
+  <link rel="stylesheet" class="alternate-style" title="green" href="css/skins/green.css" type="text/css" disabled>
+  <link rel="stylesheet" href="css/styleSwitcher.css" type="text/css">
 
 </head>
 <body>
-    <a href="#" id="scroll"><span></span></a>
-    <div class="animation-area">
-        <ul class="box-area">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
+
+  <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader">
+        </div>
     </div>
+  <!-- Preloader End -->
 
-    <div id="content" class="animated fadeIn">
+ <!-- Main Container -->
+ <div class="main-container">
+    <!-- Aside -->
+    <div class="aside">
+      <!-- Nav Toggler Btn -->
+       <div class="nav-toggler">
+         <span></span>
+       </div>
+       <!-- Nav -->
+      <div class="aside-inner">
+       <!-- Logo -->
+       <div class="logo">
+          <a onClick="window.location.reload()">Pierce</a>
+       </div>
+       <ul class="nav">
+          <li><a href="#home" class="active"><i class="fa fa-home"></i> Home</a></li>
+          <li><a href="#about"><i class="fa fa-user"></i> About</a></li>
+          <li><a href="#services"><i class="fa fa-list"></i> Services</a></li>
+          <li><a href="#portfolio"><i class="fa fa-briefcase"></i> Portfolio</a></li>
+          <li><a href="#blog"><i class="fa fa-envelope"></i> Blog</a></li>
+          <li><a href="#contact"><i class="fa fa-comments"></i> Contact</a></li>
+       </ul>
+       <!-- Copyright -->
+       <div class="copyright-text">
+         &copy; 2020 Pierce Miller
+       </div>
+     </div>
+    </div>
+    <!-- Aside End-->
+    <!-- Main Content -->
+    <div class="main-content">
 
-<!--HEADER-->
+       <!-- Home Section -->
+       <section class="home section active" id="home">
+          <div class="container">
+             <div class="intro">
+                <img src="images/about.png" alt="profile" class="shadow-dark">
+                <h1>Pierce Miller</h1>
+                <p>Freelance Web Developer</p><br>
+                <iframe src="https://open.spotify.com/embed/playlist/3Jr7885G2ZPMSj5dgUnMzh" style="border-radius: 20px;" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                <div class="social-links">
+                   <a href="#"><i class="fa fa-facebook"></i></a>
+                   <a href="#"><i class="fa fa-github"></i></a>
+                   <a href="#"><i class="fa fa-linkedin"></i></a>
+                </div>
+             </div>
+          </div>
+       </section>
+       <!-- Home Section End -->
 
-    <header>
-        <div id="top"></div>
-        <div class="menu-toggler" id="menu-toggler">
-            <div class="bar half start"></div>
-            <div class="bar"></div>
-            <div class="bar half end"></div>
-        </div>
-        <nav class="top-nav">
-            <ul class="nav-list column">
-                <li>
-                    <a href="index.html" class="nav-link">Home</a>
-                </li>
-                <li>
-                    <a href="#about" class="nav-link">About</a>
-                </li>
-                <li>
-                    <a href="#services" class="nav-link">Development</a>
-                </li>
-                <li>
-                    <a href="#portfolio" class="nav-link">Portfolio</a>
-                </li>
-                <li>
-                    <a href="#experience" class="nav-link">Experience</a>
-                </li>
-                <li>
-                    <a href="#contact" class="nav-link">Contact</a>
-                </li>
-            </ul>
-        </nav>
-        <div class="landing-text main" id="landing-text">
-            <h1>Pierce Miller</h1>
-            <h6>Freelance Web Developer</h6>
-            <button><a href="#about">Read More</a></button>
+       <!-- About Section -->
+        <section class="about section" id="about">
+           <div class="container">
+              <div class="row">
+                  <div class="section-title padd-15">
+                     <h2>About Me</h2>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="about-content padd-15">
+                      <div class="row">
+                         <div class="about-text padd-15">
+                            <h3>Hi! My name is <span>Pierce Miller</span></h3>
+                            <p>I am currently a Freelance Web Developer, and I'm very passionate and dedicated to my work.  </p>
+                         </div>
+                      </div> 
+                      <div class="row">
+                         <div class="personal-info padd-15">
+                             <div class="row">
+                                <div class="info-item padd-15">
+                                   <p>Birthday : <span>2 March 1996</span></p>
+                                </div>
+                                <div class="info-item padd-15">
+                                   <p>Age : <span>24</span></p>
+                                </div>
 
-        </div>
-    </header>
+                                <div class="info-item padd-15">
+                                   <p>Degree : <span>Bachelor of Computer and Information Sciences</span></p>
+                                </div>
+                                <div class="info-item padd-15">
+                                   <p>University : <span>Auckland University of Technology</span></p>
+                                </div>
+                                <div class="info-item padd-15">
+                                   <p>City : <span>Auckland, NZ</span></p>
+                                </div>
+                                <div class="info-item padd-15">
+                                   <p>Freelance : <span>Available</span></p>
+                                </div>
+                             </div>
+                             <div class="row">
+                                <div class="buttons padd-15">
+                                   <a href="/images/Resume.pdf" class="btn">Download CV</a>
+                                   <a href="#contact" data-section-index="1" class="btn hire-me">Hire Me</a>
+                                </div>
+                             </div>
+                         </div>
+                         <div class="skills padd-15">
+                            <div class="row">
+                               <div class="skill-item padd-15">
+                                 <h5>Javascript</h5>
+                                 <div class="progress">
+                                    <div class="progress-in" style="width: 72%"></div>
+                                    <div class="skill-percent">72%</div>
+                                 </div>
+                               </div>
+                               <div class="skill-item padd-15">
+                                 <h5>HTML</h5>
+                                 <div class="progress">
+                                    <div class="progress-in" style="width: 90%"></div>
+                                    <div class="skill-percent">90%</div>
+                                 </div>
+                               </div>
+                               <div class="skill-item padd-15">
+                                 <h5>CSS</h5>
+                                 <div class="progress">
+                                    <div class="progress-in" style="width: 80%"></div>
+                                    <div class="skill-percent">80%</div>
+                                 </div>
+                               </div>
+                               <div class="skill-item padd-15">
+                                 <h5>Bootstrap</h5>
+                                 <div class="progress">
+                                    <div class="progress-in" style="width: 60%"></div>
+                                    <div class="skill-percent">60%</div>
+                                 </div>
+                               </div>
+                            </div>
+                         </div>
+                      </div>
 
- <!--ABOUT-->   
+                      <div class="row">
+                         <div class="education padd-15">
+                           <h3 class="title">Education</h3>
+                           <div class="row">
+                             <div class="timeline-box padd-15">
+                               <div class="timeline shadow-dark">
+                                 <!-- timeline Item -->
+                                 <div class="timeline-item">
+                                    <div class="circle-dot"></div>
+                                    <h6 class="timeline-date">
+                                     <i class="fa fa-calendar"></i> 2015 - 2019
+                                    </h6>
+                                    <h4 class="timeline-title">Auckland University of Technology</h4>
+                                    <p class="timeline-text">
+                                     Graduated with a Bachelor of Computer and Information Sciences
+ 
+                                     <br><br>• Favourite fields of study: Web and Mobile Development. New
+                                        Zealand History; Applied Statistics;
+                                     <br><br>• Key achievements: RND project was amongst the top projects,
+                                        having gained an 89% mark; Gained social interpersonal skills 
+                                  </p>
+                                  </div>
+                                  <!-- timeline Item End -->
+   
+                               </div>
+                             </div>
+                           </div>
+                         </div>
+                         <div class="experience padd-15">
+                           <h3 class="title">Experience</h3>
+                           <div class="row">
+                             <div class="timeline-box padd-15">
+                               <div class="timeline shadow-dark">
+                                 <!-- timeline Item -->
+                                 <div class="timeline-item">
+                                   <div class="circle-dot"></div>
+                                   <h6 class="timeline-date">
+                                    <i class="fa fa-calendar"></i> 2020 - Present
+                                   </h6>
+                                   <h4 class="timeline-title">Freelance Web Developer</h4>
+                                   <p class="timeline-text">
 
-    <section class="about main" id="about">
-        <div class="container">
-            <div class="profile-img ">
-                <img src="img/profile.jpg" alt="">
-            </div>
-            <div class="about-details">
-                <div class="about-heading">
-                    <h1>About</h1>
-                    <h6>Myself</h6>
-                </div>
-                <p>
-                    HI..I’M PIERCE<br><br>
+                                    Developing websites for various clients, whether that be using frameworks like WordPress or a completely customized platforms
+                                    
+                                    <br><br>• Using HTML5, CSS and Javascript for front-end
+                                    <br>• PHP to interact with back-end
+                                    <br>• MySQL acting as the database
+                                 </p>
+                                 </div>
+                                 <!-- timeline Item End -->
+                                 <!-- timeline Item -->
+                                 <div class="timeline-item">
+                                   <div class="circle-dot"></div>
+                                   <h6 class="timeline-date">
+                                    <i class="fa fa-calendar"></i> 2018 - 2019
+                                   </h6>
+                                   <h4 class="timeline-title">SmartPay</h4>
+                                   <p class="timeline-text">
+                                    Helped Develop the front-end for SmartPays customer support system 2.0 within a team.
 
-                    I graduated from Auckland University of Technology where I gained a Bachelor in Computer and Information Sciences.<br><br>
-                    I am a creative and innovative person who enjoys working on a project and being part of a team where I can develop my knowledge and my skill level.
-                    <br><br>
-                    Currently working at: 
-                </p>
-                <img class="fiverr" src="img/Fiverr-Logo.png">
-                <div class="social-media">
-                    <ul class="nav-list">
-                        <li>
-                            <a href="https://www.facebook.com/piercem23" class="icon-link">
-                                <i class="fab fa-facebook-square"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/PierceMiller" class="icon-link">
-                                <i class="fab fa-github-square"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.linkedin.com/in/pierce-miller/" class="icon-link">
-                                <i class="fab fa-linkedin"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="img/Resume.pdf" class="icon-link" name="Resume">
-                                <i class="fa fa-paperclip" aria-hidden="true"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+                                    <br><br>• Using VueJS as the main framework for front-end.
+                                    <br>• Built a fake backend by ExpressJS for front-end development testing
+                                    <br>• Development with Scrum Agile Process framework
+                                    
+                                    <br><br>Product URL :: <a href="https://cutt.ly/MjMgj3Q" style="color: #2196f3;">https://cutt.ly/MjMgj3Q</a>
+                                 </p>
+                                 </div>
+                                 <!-- timeline Item End -->
+                               </div>
+                             </div>
+                           </div>
+                         </div>
+                      </div>
+                  </div>
+              </div>
+           </div>
+        </section>
+       <!-- About Section End-->
 
-<!--SERVICES-->
-
-    <section class="services" id="services">
-        <div class="container">
-            <div class="section-heading">
-                <h1>Development</h1>
-                <h6>Just some things I like to do</h6>
-            </div>
-            <div class="my-skills">
-                <div class="skill">
-                    <div class="icon-container">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h1>Web Design / Development</h1>
-                    <p>
-                        Great website design inspires curiosity, which is one of the many reasons I enjoy working on projects that can compete into todays online market
-                    </p>
-                </div>
-                <div class="skill">
-                    <div class="icon-container">
-                        <i class="fa fa-database" aria-hidden="true"></i>
-                    </div>
-                    <h1>Database Management</h1>
-                    <p>
-                        Storing and encrypting files or passwords and creating an overall safe and dynamic site, are vital components in making sure users information are kept securely  
-                    </p>
-                </div>
-                <div class="skill">
-                    <div class="icon-container">
-                        <i class="fa fa-android"></i>
-                    </div>
-                    <h1>Android Development</h1>
-                    <p>
-                        In today's era, its easy to see that businesses cannot rely on just one platform, so branching out into mobile development is a great decision. 
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="portfolio" id="portfolio">
-        <div class="container">
-            <div class="section-heading">
-                <h1>Portfolio</h1>
-                <h6>Follow my <a href="https://github.com/PierceMiller" class="github">Github</a> for more projects</h6>
-            </div>
-            <div class="portfolio-item">
-                <div class="portfolio-img has-margin-right">
-                    <iframe src="https://www.youtube.com/embed/mtYnfL7LIL4" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <div class="portfolio-description">
-                    <h6>Web Development / Database Management</h6>
-                    <h1>BLOG WEBSITE</h1>
-                    <p>
-                        NRL Fantasy Lounge is a premiere NRL Fantasy community on social Media. This platform allows them to publish and store their articles easily, as well as editing them if need be. 
-                        Has a custom user system that communicates with a MySQL database that stores registered users, with their encrypted passwords.
-                    </p>
-                    <br>
-                    <a href="https://github.com/PierceMiller/NRLFL" class="cta">View Details</a>
-                </div>
-            </div>
-            <div class="portfolio-item">
-                <div class="portfolio-description has-margin-right">
-                    <h6>Android Development</h6>
-                    <h1>INFORMATIONAL APPLICATION</h1>
-                    <p>
-                        Mobile games is a huge business and in 2016 Pokemon Go took the world by storm. To help its players, PokeSouth provides an app that showcases useful information 
-                        right at their fingertips. 
-                    </p>
-                    <br>
-                    <a href="https://github.com/PierceMiller/PokeSouth" class="cta">View Details</a>
-                </div>
-                <div class="portfolio-img">
-                    <iframe src="https://www.youtube.com/embed/Yrsc7pFPv2c" frameborder="0" allowfullscreen></iframe>
-                </div>
-            </div>
-            <div class="portfolio-item">
-                <div class="portfolio-img has-margin-right">
-                    <img src="img/ic_pvp_quiz.png" alt="pvp">
-                </div>
-                <div class="portfolio-description">
-                    <h6>Web Development</h6>
-                    <h1>QUIZ GAME</h1>
-                    <p>
-                        Using HTML, CSS and JQuery to provide a way to test your knowledge on Pokemon typings and learn the optimal types that are super effective.
-                    </p>
-                    <br>
-                    <a href="https://pvpaotearoanz.github.io/" class="cta">View Details</a>
-                </div>
-            </div>
-            <div class="portfolio-item">
-                <div class="portfolio-description has-margin-right">
-                    <h6>Web Development</h6>
-                    <h1>MODULAR BUILDING SOLUTIONS</h1>
-                    <p>
-                        Took advantage of Google Charts, learnt about SSL certificates and URL Redirecting, while able to integrate a Messenger bubble throughout the site.               
-                    </p>
-                    <br>
-                    <a href="https://modularbuildingsolutions.co.nz/" class="cta">View Details</a>
-                </div>
-                <div class="portfolio-img">
-                    <img src="img/MBS.PNG" alt="mbs">
-                </div>
-            </div>
-
-
-            <!--</div>
-            <div class="portfolio-item">
-                <div class="portfolio-description has-margin-right">
-                    <h6>Web Development</h6>
-                    <h1>Status Posting Website</h1>
-                    <p>
-                        Lorem ipsum dolor sit amet. consectetur adipisicing elit.
-                        Lorem ipsum dolor sit amet. consectetur adipisicing elit.
-                    </p>
-                    <br>
-                    <a href="#" class="cta">View Details</a>
-                </div>
-                <div class="portfolio-img">
-                    <iframe src="https://www.youtube.com/embed/k0iCGBz7W48" frameborder="0" allowfullscreen></iframe>
-                </div>
-            </div>
-            <div class="portfolio-item">
-                <div class="portfolio-img has-margin-right">
-                    <iframe src="https://www.youtube.com/embed/-GeLoJQ20DM" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <div class="portfolio-description">
-                    <h6>Android Development</h6>
-                    <h1>Quiz Application</h1>
-                    <p>
-                        Lorem ipsum dolor sit amet. consectetur adipisicing elit.
-                        Lorem ipsum dolor sit amet. consectetur adipisicing elit.
-                    </p>
-                    <br>
-                    <a href="#" class="cta">View Details</a>
-                </div>
-            </div>-->
-        </div>
-    </section>
-
-    <section class="experience" id="experience">
-        <div class="container">
-            <div class="section-heading">
-                <h1>Work Experience</h1>
-                <h6>Past and Current Jobs</h6>
-            </div>
-            <div class="timeline">
-                <ul>
-                    <li class="date" data-date="2019 - Present">
-                        <h1>Fiverr</h1>
+       <!-- Service Section -->
+       <section class="service section" id="services">
+           <div class="container">
+              <div class="row">
+                  <div class="section-title padd-15">
+                     <h2>Services</h2>
+                  </div>
+              </div>
+              <div class="row">
+                  <!-- Service Item -->
+                  <div class="service-item padd-15">
+                     <div class="service-item-inner">
+                        <div class="icon"><i class="fa fa-laptop"></i></div>
+                        <h4>Web Design / Devlopment</h4>
                         <p>
-                            Graduate Web Developer
-                            <br><br>
-                            Developing websites for various clients whether that be using
-                            frameworks like WordPress or a completely customized platforms
-                            <br><br>
-                            - Using HTML5, CSS and Javascript for front-end<br>
-                            - PHP to interact with back-end<br>
-                            - MySQL acting as the database
+                           Great website design inspires curiosity, 
+                           which is one of the many reasons I enjoy working on 
+                           projects that can compete into todays online market
                         </p>
-                    </li>
-                    <li class="date" data-date="2018 - 2019">
-                        <h1>SmartPay </h1>
+                     </div>
+                  </div>
+                  <!-- Service Item End -->
+                  <!-- Service Item -->
+                  <div class="service-item padd-15">
+                     <div class="service-item-inner">
+                        <div class="icon"><i class="fa fa-code"></i></div>
+                        <h4>Database Management</h4>
                         <p>
-                            Research and Development Internship
-                            <br><br>
-                            Developing the front-end for SmartPay system 2.0 with a team, 
-                            under a supervisor and mentor of SmartPay Lead developer.
-                            <br><br>
-                            - Using VueJS as the main framework for front-end.<br>
-                            - Built a fake backend by ExpressJS for front-end development testing<br>
-                            - Development with Scrum Agile Process framework
-                            <br><br>
-                            Product URL :: <a class="smartpayLink" href="http://frontend.b2c.prod.automation.smartpay.co.nz/">http://frontend.b2c.prod.automation.smartpay.co.nz/</a>
+                           Storing and encrypting files or passwords and creating an overall safe and dynamic site, 
+                           are vital components in making sure users information are kept securely
                         </p>
-                    </li>
-                </ul>
+                     </div>
+                  </div>
+                  <!-- Service Item End -->
+                  <!-- Service Item -->
+                  <div class="service-item padd-15">
+                     <div class="service-item-inner">
+                        <div class="icon"><i class="fa fa-android"></i></div>
+                        <h4>Android Development</h4>
+                        <p>
+                           In today's era, its easy to see that businesses cannot rely on just one platform, 
+                           so branching out into mobile development is a great decision.
+                        </p>
+                     </div>
+                  </div>
+                  <!-- Service Item End -->
+              </div>
             </div>
-        </div>
-    </section>
+        </section>
+       <!-- Service Section End-->
 
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="section-heading">
-                <h1>Contact</h1>
-                <h6>Like what you see? Say Hi and get in touch with me</h6>
-            </div>
+       <!-- Portfolio Section -->
+       <section class="portfolio section" id="portfolio">
+           <div class="container">
+              <div class="row">
+                  <div class="section-title padd-15">
+                     <h2>Portfolio</h2>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="portfolio-filter padd-15">
+                     <button type="button" class="active" data-filter="all">All</button>
+                     <button type="button" data-filter="web-design">Web Design</button>
+                     <button type="button" data-filter="data-management">Data Management</button>
+                     <button type="button" data-filter="android">Android</button>
+                  </div>
+              </div>
+              <div class="row">
 
-            <form action="https://formspree.io/mzbawbaj" method="POST">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="_replyto" placeholder="Enter your email here..." required>
-                <label for="email" class="message">Message:</label>
-                <textarea name="message" id="subject" cols="10" rows="10"></textarea>
-                <input type="submit" value="submit"></input>
-            </form>
-        </div>
-    </section>
-    <footer class="copyright">
-        <div class="up" id="up">
-            <a href="#top"><i class="fas fa-chevron-up"></i></a>
-        </div>
-        <p>&copy; 2020 Pierce Miller</p>
-    </footer>
+               
+                 <!-- Portfolio Item -->
+                 <div class="portfolio-item padd-15" data-category="web-design">
+                    <div class="portfolio-item-inner shadow-dark">
+                       <div class="portfolio-img">
+                          <img src="images/portfolio/2.png" alt="portfolio">
+                       </div>
+                       <div class="portfolio-info">
+                          <h4>Modular Building Solutions</h4>
+                          <div class="icon">
+                             <a href="https://modularbuildingsolutions.co.nz/"><i class="fa fa-search"></i></a>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+                 <!-- Portfolio Item end -->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="main.js"></script>
 
-    <!--smooth-scroll-->
-    <script src="smooth-scroll.js"></script>
-    <script src="initialize-scroll.js"></script>
+                 <!-- Portfolio Item -->
+                 <div class="portfolio-item padd-15" data-category="android">
+                    <div class="portfolio-item-inner shadow-dark">
+                       <div class="portfolio-img">
+                          <img src="images/portfolio/pokesouth.GIF" alt="portfolio">
+                       </div>
+                       <div class="portfolio-info">
+                          <h4>PokeSouth</h4>
+                          <div class="icon">
+                             <a href="https://play.google.com/store/apps/details?id=pokesouth.com.pokesouth&hl=en_NZ&gl=US"><i class="fa fa-search"></i></a>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+                 <!-- Portfolio Item end -->
+                 <!-- Portfolio Item -->
+                 <div class="portfolio-item padd-15" data-category="web-design">
+                    <div class="portfolio-item-inner shadow-dark">
+                       <div class="portfolio-img">
+                          <img src="images/portfolio/smartpay.PNG" alt="portfolio">
+                       </div>
+                       <div class="portfolio-info">
+                          <h4>SmartPay - Customer Support UI</h4>
+                          <div class="icon">
+                             <a href="https://frontend.b2c.prod.automation.smartpay.co.nz/"><i class="fa fa-search"></i></a>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+                 <!-- Portfolio Item end -->
+                 <!-- Portfolio Item -->
+                 <div class="portfolio-item padd-15" data-category="data-management">
+                    <div class="portfolio-item-inner shadow-dark">
+                       <div class="portfolio-img">
+                          <img src="images/portfolio/5.PNG" alt="portfolio">
+                       </div>
+                       <div class="portfolio-info">
+                          <h4>NRL Fantasy Lounge</h4>
+                          <div class="icon">
+                             <a href="https://youtu.be/mtYnfL7LIL4"><i class="fa fa-search"></i></a>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+                 <!-- Portfolio Item end -->
+                 <!-- Portfolio Item -->
+                 <div class="portfolio-item padd-15" data-category="web-design">
+                    <div class="portfolio-item-inner shadow-dark">
+                       <div class="portfolio-img">
+                          <img src="images/portfolio/6.png" alt="portfolio">
+                       </div>
+                       <div class="portfolio-info">
+                          <h4>PVP Aoteroa</h4>
+                          <div class="icon">
+                             <a href="https://pvpaotearoanz.github.io/"><i class="fa fa-search"></i></a>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+                 <!-- Portfolio Item end -->
+
+              </div>
+
+           </div>
+        </section>
+       <!-- Portfolio Section End-->
+
+       <!-- Blog Section -->
+       <section class="blog section" id="blog">
+           <div class="container">
+              <div class="row">
+                  <div class="section-title padd-15">
+                     <h2>Latest Blog</h2>
+                  </div>
+              </div>
+              <div class="row">
+
+
+                  <!-- Blog Item -->
+                  <div class="blog-item padd-15">
+                     <div class="blog-item-inner shadow-dark">
+                         <div class="blog-img">
+                            <a href="https://pierces-corner.blogspot.com/2020/11/regaining-focus.html"><img src="images/blog/1.jpg" alt="blog" ></a>
+                            <div class="blog-date">
+                              16 Nov 2020
+                            </div>
+                         </div>
+                         <div class="blog-info">
+                            <h4 class="blog-title">Isolation</h4>
+                            <p class="blog-description">This year has been a year to reflect and count our blessings. With the pandemic washing over the world with ease, forcing countries one by one, going into lock down..</p>
+                            <p class="blog-tags">Tags : <a href="#">Life</a> , <a href="">Lockdown</a></p>
+                         </div>
+                     </div>
+                  </div>
+                  <!-- Blog Item End -->
+              </div>
+           </div>
+       </section>
+
+       <!-- Blog Section End-->
+
+       <!-- Contact Section -->
+       <section class="contact section" id="contact">
+           <div class="container">
+              <div class="row">
+                  <div class="section-title padd-15">
+                     <h2>Contact Me</h2>
+                  </div>
+              </div>
+              <div class="row">
+                  <!-- contact-info-item -->
+                  <div class="contact-info-item padd-15">
+                      <div class="icon"><i class="fa fa-phone"></i></div>
+                      <h4>Call Me On</h4>
+                      <p>+64 21 129 7248</p>
+                  </div>
+                  <!-- contact-info-item End -->
+                  <!-- contact-info-item -->
+                  <div class="contact-info-item padd-15">
+                      <div class="icon"><i class="fa fa-map-marker"></i></div>
+                      <h4>Location</h4>
+                      <p>Auckland, New Zealand</p>
+                  </div>
+                  <!-- contact-info-item End -->
+                  <!-- contact-info-item -->
+                  <div class="contact-info-item padd-15">
+                      <div class="icon"><i class="fa fa-envelope"></i></div>
+                      <h4>Email</h4>
+                      <p>piercemiller23@gmail.com</p>
+                  </div>
+                  <!-- contact-info-item End -->
+              </div>
+
+              <!-- Contact Form -->
+               <div class="row">
+                  <form class="contact-form padd-15">
+                      <div class="row">
+                          <div class="form-item col-12 padd-15">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Email*">
+                            </div>
+                          </div>
+                      </div>
+                      <div class="row">
+                        <div class="form-item col-12 padd-15">
+                            <div class="form-group">
+                                <textarea  class="form-control" placeholder="Your Message..."></textarea>
+                            </div>
+                          </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12 padd-15">
+                            <button type="submit" class="btn">Send Message</button>
+                          </div>
+                      </div>
+                  </form>
+               </div>
+              <!-- Contact Form End-->
+           </div>
+        </section>
+       <!-- Contact Section End -->
+
+    </div>
+    <!-- Main Content End-->
+ </div>
+ <!-- Main Container -->
+
+<!-- Lightbox -->
+  <div class="lightbox">
+     <div class="lightbox-content">
+         <div class="lightbox-close">&times;</div>
+         <img src="images/portfolio/2.jpg" class="lightbox-img" onclick="nextItem()">
+         <div class="lightbox-caption">
+            <div class="caption-text"></div>
+            <div class="caption-counter"></div>
+         </div>
+     </div>
+     <div class="lightbox-controls">
+        <div class="prev-item" onclick="prevItem()"><i class="fa fa-angle-left"></i></div>
+        <div class="next-item" onclick="nextItem()"><i class="fa fa-angle-right"></i></div>
+     </div>
+  </div>
+<!-- Lightbox End -->
+
+ 
+ <!-- Live Style Switcher - Demo Only -->
+ <div class="style-switcher">
+    <div class="toggle-style-switcher">
+        <i class="fa fa-cog fa-spin"></i>
+    </div>
+    <h5>Style Switcher</h5>
+      <ul>
+        <li><a href="javascript:void(0);" title="pink" style="background-color: #ec1839" onclick="setActiveStyle('pink')"></a></li>   
+        <li><a href="javascript:void(0);" title="blue" style="background-color: #2196f3" onclick="setActiveStyle('blue')"></a></li>   
+        <li><a href="javascript:void(0);" title="orange" style="background-color: #fa5b0f" onclick="setActiveStyle('orange')"></a></li>   
+        <li><a href="javascript:void(0);" title="yellow" style="background-color: #ffb400" onclick="setActiveStyle('yellow')"></a></li>   
+        <li><a href="javascript:void(0);" title="green" style="background-color: #72b626" onclick="setActiveStyle('green')"></a></li>   
+      </ul>
+      <h5>Body Skin</h5>
+      <label>
+         <input type="radio" class="body-skin" name="body-style" value="light" checked="true">
+         Light
+      </label>
+      <label>
+         <input type="radio" class="body-skin" name="body-style" value="dark">
+         Dark
+      </label>
+  </div>
+ <!-- Live Style Switcher - Demo Only End -->
+
+
+
+<!-- Template js -->
+<script src="js/script.js"></script>
+
+<!-- Live Style js - Demo Only -->
+<script src="js/styleSwitcher.js"></script>
+
 </body>
 </html>
+
