@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pierce — Online Avatar</title>
+  <style>
+    .chatstatus :root{
+      --size: 128px;            /* avatar diameter — change as needed */
+      --status-size: 26px;      /* status dot diameter */
+      --green: #10b981;         /* primary online green */
+      --shadow-green: rgba(16,185,129,0.35);
+    }
+
+    .chatstatus body{
+      margin:0;
+      height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: #f8fafc;
+      color:#0f172a;
+    }
+
+    .chatstatus .avatar-wrap{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:8px;
+    }
+
+    /* avatar circle */
+    .chatstatus .avatar {
+      position:relative;
+      width:var(--size);
+      height:var(--size);
+      border-radius:9999px;
+      overflow:hidden;
+      box-shadow: 0 6px 18px rgba(2,6,23,0.12);
+      border: 2px solid #ffffff;
+      background: #e6eef6;
+    }
+
+    .chatstatus .avatar img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    /* pulsing ring + solid dot */
+    .chatstatus .status {
+      position:absolute;
+      right:6px;
+      bottom:6px;
+      width:var(--status-size);
+      height:var(--status-size);
+      border-radius:50%;
+      z-index:10;
+      display:inline-block;
+      /* solid dot look */
+      background:var(--green);
+      border:3px solid #fff; /* white ring separating dot from avatar */
+      box-shadow: 0 0 10px rgba(16,185,129,0.55);
+    }
+
+    /* pulse layer sits behind the dot via pseudo-element */
+    .chatstatus .status::before{
+      content:"";
+      position:absolute;
+      left:50%;
+      top:50%;
+      transform:translate(-50%,-50%);
+      width: calc(var(--status-size) * 2.2);
+      height: calc(var(--status-size) * 2.2);
+      border-radius:50%;
+      background: radial-gradient(circle, rgba(16,185,129,0.18) 0%, rgba(16,185,129,0.06) 40%, rgba(16,185,129,0.00) 70%);
+      filter: blur(6px);
+      animation: pulse 1.6s infinite;
+      pointer-events:none;
+    }
+
+    @keyframes pulse{
+      0%   { transform: translate(-50%,-50%) scale(0.88); opacity:0.85; }
+      50%  { transform: translate(-50%,-50%) scale(1.12); opacity:0.45; }
+      100% { transform: translate(-50%,-50%) scale(0.88); opacity:0.85; }
+    }
+
+    /* label below avatar */
+    .chatstatus .label {
+      text-align:center;
+      line-height:1;
+    }
+
+    .chatstatus .name {
+      font-weight:700;
+      font-size:0.95rem;
+      color:#0f172a;
+    }
+
+    .chatstatus .online {
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-top:4px;
+      font-size:0.86rem;
+      color:#065f46; /* darker green-ish for text */
+      font-weight:600;
+    }
+
+    .chatstatus .online .mini-dot{
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:var(--green);
+      box-shadow: 0 0 8px rgba(16,185,129,0.6);
+      border:2px solid #fff;
+    }
+
+    /* small responsive tweak */
+    @media (max-width:420px){
+      .chatstatus :root{ --size:96px; --status-size:20px; }
+    }
+  </style>
+</head>
+<body class="chatstatus">
+  <div class="avatar-wrap" role="region" aria-label="Chatbot status">
+    <div class="avatar" aria-live="polite" aria-atomic="true">
+      <!-- Replace this src with your photo; keep same aspect ratio for best result -->
+      <img src="https://via.placeholder.com/512x512.png?text=Pierce" alt="Pierce's avatar">
+      <span class="status" aria-hidden="true"></span>
+    </div>
+
+    <div class="label">
+      <div class="name">Pierce</div>
+      <div class="online" aria-hidden="false"> 
+        <span class="mini-dot" aria-hidden="true"></span>
+        <span>Pierce is online</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -9,13 +9,13 @@ const inputInitHeight = chatInput.scrollHeight;
 
 // API configuration
 const API_KEY = "AIzaSyB-xA7NJrb2L4AXMl-nlEtBjuCbauR7UA8"; // Your API key here
-const API_URL = `https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=${API_KEY}`;
+const API_URL = `https://generativelanguage.googleapis.com/v1/models/gemini-2.5-flash:generateContent?key=${API_KEY}`;
 
 const createChatLi = (message, className) => {
   // Create a chat <li> element with passed message and className
   const chatLi = document.createElement("li");
   chatLi.classList.add("chat", `${className}`);
-  let chatContent = className === "outgoing" ? `<p></p>` : `<img src="https://www.rothbury.co.nz/brokerphoto/_brokerGenericDisplay/Pierce_Miller.jpg" alt="Pierce" class="ai-image"><p></p>`;
+  let chatContent = className === "outgoing" ? `<p></p>` : `<img src="https://www.rothbury.co.nz/brokerphoto/_brokerGenericDisplay/Pierce-Miller.jpg?v=1747278268" alt="Pierce" class="ai-image"><p></p>`;
   chatLi.innerHTML = chatContent;
   chatLi.querySelector("p").textContent = message;
   return chatLi; // return chat <li> element
