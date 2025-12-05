@@ -281,3 +281,17 @@ function debounce(func, wait, immediate) {
 		if (immediate && !timeout) func.apply(context, args);
 	};
 };
+
+/*TESTIMONIAL SECTION*/
+
+  const testimonials = document.querySelectorAll('.testimonial-card');
+  let index = 0;
+
+  function showNextTestimonial() {
+    testimonials[index].classList.remove('active');
+    index = (index + 1) % testimonials.length;
+    testimonials[index].classList.add('active');
+  }
+
+  // Rotate every 6 seconds
+  setInterval(showNextTestimonial, 6000);
