@@ -1,0 +1,1 @@
+setTimeout(function(){if(!window.selahBooted){var a=document.getElementById('app');if(a)a.innerHTML='<div class="card"><h2>Selah could not load</h2><p class="muted">The application script did not load. Reload the page or check the GitHub Pages deployment.</p><button class="btn" onclick="location.reload()">Reload Selah</button></div>'; }},2000);
