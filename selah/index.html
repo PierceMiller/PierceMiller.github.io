@@ -35,9 +35,10 @@ var steps=[['Observe','What is actually there? Look for repeated words, contrast
 var SUPABASE_URL='https://leegczvntkjniwqiphgw.supabase.co';
 var SUPABASE_KEY='sb_publishable_oL48CchLp6RwHNlOUPNNkw_FXEbOWVp';
 var sb=null;
+function safeJSON(key,fallback){try{var v=JSON.parse(localStorage.getItem(key)||'');return v==null?fallback:v}catch(e){localStorage.removeItem(key);return fallback}}
 function ensureSupabase(){if(sb)return sb;if(!window.supabase||!window.supabase.createClient){toast('Account service is still loading. Please try again.');return null}sb=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY);return sb;}
 var authMode='login',currentUser=null;
-var state={view:location.hash.slice(2)||'home',step:0,current:'mark4',answers:JSON.parse(localStorage.getItem('selahAnswers')||'{}'),review:JSON.parse(localStorage.getItem('selahReview')||'[]')};
+var state={view:location.hash.slice(2)||'home',step:0,current:'mark4',answers:safeJSON('selahAnswers',{}),review:safeJSON('selahReview',[])};
 async function initAuth(){var client=ensureSupabase();if(!client)return;var r=await client.auth.getSession();currentUser=r.data.session?r.data.session.user:null;updateAccountUI();client.auth.onAuthStateChange(function(_e,s){currentUser=s?s.user:null;updateAccountUI();if(currentUser)syncFromCloud();});}
 function updateAccountUI(){var b=document.getElementById('n-account');if(b)b.textContent=currentUser?'Account':'Sign in';}
 function openAuth(){if(currentUser){accountView();return}if(!ensureSupabase())return;document.getElementById('authModal').classList.remove('hidden');renderAuth();}
@@ -115,6 +116,5 @@ async function searchBible(query){
 }
 function openBibleResult(osis,chapter,verse){bibleCurrent.book=osis;bibleCurrent.chapter=chapter;bible();setTimeout(function(){var el=document.getElementById(osis+'-'+chapter+'-'+verse);if(el){el.scrollIntoView({behavior:'smooth',block:'center'});el.style.background='#efeadd';setTimeout(function(){el.style.background=''},1800)}},500)}
 
-render();
-setTimeout(initAuth,0);
+try{render()}catch(e){console.error('Selah startup error:',e);document.getElementById('app').innerHTML='<div class="card"><h2>Selah could not start</h2><p class="muted">A saved browser setting prevented the app from starting. Clear Selah site data and reload.</p><button class="btn" onclick="localStorage.clear();location.reload()">Reset Selah</button></div>'}setTimeout(initAuth,0);
 </script></body></html>
