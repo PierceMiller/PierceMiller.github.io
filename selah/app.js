@@ -25,7 +25,14 @@ var s=await sb.from('review_items').select('prompt,answer,created_at').eq('user_
 async function cloudNote(id,n){if(!currentUser)return;var r=await sb.from('user_notes').upsert({user_id:currentUser.id,verse_id:id,note:n,updated_at:new Date().toISOString()},{onConflict:'user_id,verse_id'});if(r.error)console.error(r.error)}
 async function cloudHighlight(id,on){if(!currentUser)return;var q=on?sb.from('user_highlights').upsert({user_id:currentUser.id,verse_id:id},{onConflict:'user_id,verse_id'}):sb.from('user_highlights').delete().eq('user_id',currentUser.id).eq('verse_id',id);var r=await q;if(r.error)console.error(r.error)}
 async function cloudProgress(osis,chapter){if(!currentUser)return;var r=await sb.from('reading_progress').upsert({user_id:currentUser.id,book_osis:osis,chapter:chapter,updated_at:new Date().toISOString()},{onConflict:'user_id,book_osis'});if(r.error)console.error(r.error)}
-async function cloudStudy(p,i,answer){if(!currentUser)return;var r=await sb.from('studies').select('id').eq('user_id',currentUser.id).eq('passage_ref',p.book+' '+p.ref).maybeSingle();var studyId;if(r.data)studyId=r.data.id;else{var n=await sb.from('studies').insert({user_id:currentUser.id,passage_ref:p.book+' '+p.ref,title:p.title,genre:p.genre}).select('id').single();if(n.error){console.error(n.error);return}studyId=n.data.id}var a=await sb.from('study_answers').upsert({study_id:studyId,user_id:currentUser.id,step_index:i,answer:answer,updated_at:new Date().toISOString()},{onConflict:'study_id,step_index'});if(a.error)console.error(a.error)}
+async function cloudStudy(p,i,answer){
+ if(!currentUser)return;
+ var ref=p.book+' '+p.ref;
+ var n=await sb.from('studies').upsert({user_id:currentUser.id,passage_ref:ref,title:p.title,genre:p.genre,updated_at:new Date().toISOString()},{onConflict:'user_id,passage_ref'}).select('id').single();
+ if(n.error){console.error(n.error);return}
+ var a=await sb.from('study_answers').upsert({study_id:n.data.id,user_id:currentUser.id,step_index:i,answer:answer,updated_at:new Date().toISOString()},{onConflict:'study_id,step_index'});
+ if(a.error)console.error(a.error)
+}
 async function cloudReview(item,p){if(!currentUser)return;var r=await sb.from('review_items').insert({user_id:currentUser.id,study_id:null,prompt:item.prompt,answer:item.answer,next_review_at:new Date(Date.now()+86400000).toISOString()});if(r.error)console.error(r.error)}
 
 function save(){localStorage.setItem('selahAnswers',JSON.stringify(state.answers));localStorage.setItem('selahReview',JSON.stringify(state.review))}
