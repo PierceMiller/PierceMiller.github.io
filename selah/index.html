@@ -222,7 +222,18 @@ html{scroll-behavior:smooth}body{background:var(--selah-paper);color:var(--selah
   0%{transform:scaleY(0)}
   100%{transform:scaleY(1)}
 }
-</style>
+<style id="selah-horizontal-fix">
+@media(min-width:851px){
+.selah-horizontal{height:220vh!important;padding:0!important;overflow:clip!important}
+.selah-horizontal .sectionIntro{position:absolute!important;left:8vw;right:8vw;top:10vh;z-index:8;pointer-events:none}
+.selah-horizontal .methodViewport{position:sticky;top:0;height:100vh;display:flex;align-items:center;overflow:hidden;padding-top:12vh}
+.selah-horizontal .methodGrid{display:flex!important;flex:none!important;width:max-content!important;gap:24px!important;margin:0!important;padding:0 8vw 30px!important;background:none!important;border:0!important;will-change:transform}
+.selah-horizontal .methodCard{flex:0 0 360px!important;width:360px!important;height:420px!important;min-height:420px!important;border:1px solid rgba(247,244,235,.13)!important;border-radius:2px;background:linear-gradient(145deg,#174d3d,#0b2a22)!important;color:#f7f4eb!important;box-shadow:0 30px 90px rgba(0,0,0,.28)!important}
+.selah-horizontal .methodCard h3{color:#fff!important;font-size:32px!important}.selah-horizontal .methodCard p{color:#bdcbc5!important}
+.selah-horizontal .horizontalProgress{position:absolute;left:8vw;right:8vw;bottom:7vh;height:1px;background:rgba(247,244,235,.15);z-index:9}
+.selah-horizontal .horizontalProgress span{display:block;height:100%;width:0;background:#d0aa61}
+}
+</style></style>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <meta name="selah-build" content="2026-10-02-stable-js">
 </head>
