@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101114">
+<title>My Media — Plex Portal</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="./">MY<span>MEDIA</span></a>
+  <nav><button class="nav active" data-view="home">Home</button><button class="nav" data-view="movies">Movies</button><button class="nav" data-view="shows">TV Shows</button></nav>
+  <div class="actions"><button id="searchBtn" class="icon-btn" aria-label="Search">⌕</button><button id="settingsBtn" class="ghost">Plex Settings</button></div>
+</header>
+
+<main id="app">
+  <section id="hero" class="hero">
+    <div class="hero-copy"><p class="eyebrow">YOUR PRIVATE LIBRARY</p><h1 id="heroTitle">Your media, your way.</h1><p id="heroSummary">Connect this page to your Plex server to browse your Movies and TV Shows in a clean streaming-style interface.</p><div class="hero-actions"><button id="heroPlay" class="primary">▶ Open in Plex</button><button id="heroDetails" class="secondary">Browse Library</button></div></div>
+  </section>
+  <section class="content">
+    <div id="status" class="status"></div>
+    <div id="sections"></div>
+  </section>
+</main>
+
+<div id="searchModal" class="modal hidden"><div class="modal-card wide"><button class="close" data-close="searchModal">×</button><h2>Search your library</h2><input id="searchInput" class="search-input" placeholder="Search movies, shows, actors…"><div id="searchResults" class="grid"></div></div></div>
+<div id="settingsModal" class="modal hidden"><div class="modal-card"><button class="close" data-close="settingsModal">×</button><h2>Plex connection</h2><p class="muted">This GitHub Pages front-end talks directly to your Plex server. For a private deployment, use HTTPS and do not commit your Plex token to GitHub.</p><label>Plex server URL<input id="plexUrl" placeholder="https://your-server.example.com:32400"></label><label>Plex token<input id="plexToken" type="password" placeholder="Your X-Plex-Token"></label><label class="check"><input id="remember" type="checkbox" checked> Remember settings in this browser</label><button id="saveSettings" class="primary full">Connect to Plex</button><p id="settingsMsg" class="small"></p></div></div>
+
+<script src="./app.js"></script>
+</body>
+</html>
