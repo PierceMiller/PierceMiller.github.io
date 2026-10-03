@@ -91,7 +91,7 @@ John:[[1,1,'Word becomes flesh'],[2,4,'signs and conversations'],[5,6,'healings 
 Acts:[[1,2,'ascension and Pentecost'],[3,5,'apostles and early church'],[6,7,'Stephen'],[8,9,'Philip and Paul conversion'],[10,12,'Peter and Gentiles'],[13,14,'Paul first journey'],[15,15,'Jerusalem council'],[16,18,'Paul in Macedonia and Corinth'],[19,20,'Paul in Ephesus'],[21,23,'Paul arrested in Jerusalem'],[24,26,'Paul before governors and Agrippa'],[27,28,'shipwreck and Rome']]
 };
 var visualCache=safeJSON('selahVisualCache',{});
-async function selahHash(str){var h=2166136261;for(var i=0;i<str.length;i++){h^=str.charCodeAt(i);h=Math.imul(h,16777619)}return (h>>>0)}
+function selahHash(str){var h=2166136261;for(var i=0;i<str.length;i++){h^=str.charCodeAt(i);h=Math.imul(h,16777619)}return (h>>>0)}
 function selahIllustration(osis,chapter,customStory){
  var range=(bibleStoryRanges[osis]||[]).find(function(r){return chapter>=r[0]&&chapter<=r[1]});
  var story=customStory||((range&&range[2])||bibleVisualThemes[osis]||'Bible story');
