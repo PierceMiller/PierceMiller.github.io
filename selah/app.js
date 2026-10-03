@@ -91,23 +91,45 @@ John:[[1,1,'Word becomes flesh'],[2,4,'signs and conversations'],[5,6,'healings 
 Acts:[[1,2,'ascension and Pentecost'],[3,5,'apostles and early church'],[6,7,'Stephen'],[8,9,'Philip and Paul conversion'],[10,12,'Peter and Gentiles'],[13,14,'Paul first journey'],[15,15,'Jerusalem council'],[16,18,'Paul in Macedonia and Corinth'],[19,20,'Paul in Ephesus'],[21,23,'Paul arrested in Jerusalem'],[24,26,'Paul before governors and Agrippa'],[27,28,'shipwreck and Rome']]
 };
 var visualCache=safeJSON('selahVisualCache',{});
-async function fetchStoryArt(osis,chapter){
- var key=osis+'-'+chapter;
- if(visualCache[key])return visualCache[key];
+async function selahHash(str){var h=2166136261;for(var i=0;i<str.length;i++){h^=str.charCodeAt(i);h=Math.imul(h,16777619)}return (h>>>0)}
+function selahIllustration(osis,chapter,customStory){
  var book=bibleBooks.find(function(b){return b[0]===osis});
  var range=(bibleStoryRanges[osis]||[]).find(function(r){return chapter>=r[0]&&chapter<=r[1]});
- var story=range?range[2]:bibleVisualThemes[osis];
- var query=(book?book[1]+' ':'')+story+' biblical art painting';
- try{
-  var url='https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch='+encodeURIComponent(query)+'&gsrnamespace=6&gsrlimit=6&prop=imageinfo&iiprop=url|extmetadata&iiurlwidth=1200&format=json&origin=*';
-  var r=await fetch(url);if(!r.ok)throw new Error('art search failed');
-  var data=await r.json(),pages=data.query&&data.query.pages?Object.values(data.query.pages):[];
-  var page=pages.find(function(p){return p.imageinfo&&p.imageinfo[0]&&p.imageinfo[0].thumburl})||pages.find(function(p){return p.imageinfo&&p.imageinfo[0]&&p.imageinfo[0].url});
-  if(!page)return null;
-  var info=page.imageinfo[0],title=(page.title||'').replace(/^File:/,'');
-  var item={url:info.thumburl||info.url,title:title,source:info.descriptionurl||'https://commons.wikimedia.org/'};
-  visualCache[key]=item;localStorage.setItem('selahVisualCache',JSON.stringify(visualCache));return item;
- }catch(e){console.warn('Selah visual search failed',e);return null}
+ var story=customStory||((range&&range[2])||bibleVisualThemes[osis]||'Bible story');
+ var seed=selahHash(osis+'-'+chapter+'-'+story),pick=seed%6;
+ var palettes=[['#f7edcf','#d7e6df','#39736d','#b66b3d','#203f3a','#d49a3d'],['#f4e5c2','#d6dce7','#456b7a','#a85c43','#263c52','#d29a49'],['#f5e8d5','#d4e3d2','#52765f','#c27846','#34463c','#c99a55'],['#f2dfb7','#d9d6c8','#667b72','#9e5c4a','#33423e','#d5a84f'],['#f6e7c9','#d5e1eb','#55738a','#b86e42','#2d4650','#d3a64e'],['#f4e4cf','#d7dfd1','#47706b','#a96346','#2d4540','#c99a52']];
+ var p=palettes[pick],w=900,h=620;
+ var lower=story.toLowerCase();
+ var water=/sea|river|jordan|galilee|red sea|water|storm|boat|baptism|fishing/.test(lower);
+ var mountain=/mount|sinai|zion|hill|valley|wilderness|desert|transfiguration/.test(lower);
+ var city=/jerusalem|babylon|nineveh|corinth|rome|bethlehem|egypt|city|palace|temple/.test(lower);
+ var animal=/lion|whale|shepherd|sheep|ark|furnace|beast/.test(lower);
+ var holy=/jesus|christ|gospel|apostles|church|cross|resurrection|empty tomb|paul|peter/.test(lower);
+ var horizon=water?430:mountain?410:450;
+ var sunX=pick%2?690:190;
+ var hills='<path d="M0 '+horizon+' Q130 '+(horizon-105)+' 260 '+horizon+' T520 '+(horizon-35)+' T900 '+horizon+' V620 H0Z" fill="'+p[1]+'"/><path d="M0 '+(horizon+45)+' Q170 '+(horizon-5)+' 340 '+(horizon+42)+' T690 '+(horizon-8)+' T900 '+(horizon+38)+' V620 H0Z" fill="'+p[2]+'" opacity=".92"/>';
+ var waterShape=water?'<path d="M0 455 Q180 425 360 455 T720 455 T900 445 V620 H0Z" fill="'+p[2]+'" opacity=".88"/><path d="M40 505 Q150 490 260 505 M410 520 Q530 505 650 520 M690 480 Q770 468 850 480" stroke="'+p[1]+'" stroke-width="7" fill="none" opacity=".65"/>':'';
+ var cityShape=city?'<g fill="'+p[4]+'" opacity=".95"><path d="M610 455v-78h48v78zM666 455v-112h62v112zM738 455v-62h45v62zM790 455v-92h55v92z"/><path d="M688 343l9-25 9 25zM812 363l6-20 7 20z"/></g>':'';
+ var mountainShape=mountain?'<path d="M70 450 L250 220 L355 390 L465 175 L690 450Z" fill="'+p[2]+'"/><path d="M250 220 L215 285 L250 270 L278 300 L300 272 L355 390Z" fill="'+p[1]+'" opacity=".9"/><path d="M465 175 L410 255 L455 238 L490 275 L530 230 L565 300 L690 450Z" fill="'+p[1]+'" opacity=".78"/>':'';
+ var figure='<g transform="translate(500 335)"><path d="M-28 55 Q-55 105 -48 170 L-85 238 L-20 238 L8 168 L45 238 L108 238 L65 165 Q72 95 35 55Z" fill="'+p[3]+'"/><path d="M-40 62 Q0 25 42 62 L32 150 L-30 150Z" fill="'+p[0]+'"/><circle cx="1" cy="18" r="31" fill="'+p[4]+'"/><path d="M-18 13 Q2 -12 24 12 Q20 34 -4 42 Q-23 33 -18 13Z" fill="'+p[4]+'"/><path d="M-54 95 Q-115 130 -138 185" stroke="'+p[0]+'" stroke-width="25" stroke-linecap="round"/><path d="M58 95 Q112 126 132 178" stroke="'+p[0]+'" stroke-width="25" stroke-linecap="round"/></g>';
+ var jesusFigure=holy?figure.replace(/translate\\(500 335\\)/,'translate(500 320)'):'';
+ var boat=water?'<g transform="translate(145 390)"><path d="M0 35 L230 35 L190 88 Q115 112 40 88Z" fill="'+p[4]+'"/><path d="M110 35V-65" stroke="'+p[4]+'" stroke-width="8"/><path d="M115 -62 L190 5 L115 5Z" fill="'+p[3]+'"/><circle cx="55" cy="18" r="13" fill="'+p[0]+'"/><circle cx="92" cy="12" r="13" fill="'+p[0]+'"/><circle cx="150" cy="16" r="13" fill="'+p[0]+'"/></g>':'';
+ var animalShape=animal?'<g transform="translate(650 405)"><ellipse cx="0" cy="45" rx="105" ry="58" fill="'+p[3]+'"/><circle cx="88" cy="12" r="42" fill="'+p[3]+'"/><circle cx="102" cy="3" r="5" fill="'+p[4]+'"/><path d="M-80 55 Q-145 20 -132 -25" stroke="'+p[4]+'" stroke-width="12" fill="none" stroke-linecap="round"/><path d="M-45 90v35 M20 90v35" stroke="'+p[4]+'" stroke-width="10" stroke-linecap="round"/></g>':'';
+ var scroll=city&&!holy?'<g transform="translate(160 330) rotate(-7)"><rect width="130" height="92" rx="8" fill="'+p[0]+'" stroke="'+p[5]+'" stroke-width="5"/><path d="M20 28h90M20 47h72M20 66h86" stroke="'+p[5]+'" stroke-width="6" stroke-linecap="round"/></g>':'';
+ var stars='<g fill="'+p[5]+'" opacity=".75"><circle cx="105" cy="105" r="4"/><circle cx="160" cy="150" r="3"/><circle cx="730" cy="105" r="4"/><circle cx="810" cy="155" r="3"/><circle cx="560" cy="90" r="3"/></g>';
+ var grain='<filter id="g"><feTurbulence type="fractalNoise" baseFrequency=".75" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 .06 0"/></filter>';
+ var svg='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 '+w+' '+h+'"><defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="'+p[0]+'"/><stop offset="1" stop-color="'+p[1]+'"/></linearGradient><filter id="g"><feTurbulence type="fractalNoise" baseFrequency=".75" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 .06 0"/></filter></defs><rect width="900" height="620" fill="url(#sky)"/><circle cx="'+sunX+'" cy="125" r="58" fill="'+p[5]+'" opacity=".82"/>'+stars+hills+waterShape+mountainShape+cityShape+scroll+boat+animalShape+jesusFigure+'<rect width="900" height="620" filter="url(#g)" opacity=".45"/></svg>';
+ return 'data:image/svg+xml;charset=UTF-8,'+encodeURIComponent(svg);
+}
+function fetchStoryArt(osis,chapter){
+ var key=osis+'-'+chapter;
+ var book=bibleBooks.find(function(b){return b[0]===osis});
+ var range=(bibleStoryRanges[osis]||[]).find(function(r){return chapter>=r[0]&&chapter<=r[1]});
+ var story=(range&&range[2])||bibleVisualThemes[osis]||'Bible story';
+ var item={url:selahIllustration(osis,chapter,story),title:story,source:'selah-local'};
+ visualCache[key]=item;
+ try{localStorage.setItem('selahVisualCache',JSON.stringify(visualCache))}catch(e){}
+ return Promise.resolve(item);
 }
 function visualStoryLabel(osis,chapter){
  var book=bibleBooks.find(function(b){return b[0]===osis}),range=(bibleStoryRanges[osis]||[]).find(function(r){return chapter>=r[0]&&chapter<=r[1]});
@@ -118,7 +140,7 @@ async function loadBibleVisual(osis,chapter){
  var label=visualStoryLabel(osis,chapter);host.innerHTML='<div class="storyArtLoading"><span>Finding a visual anchor…</span></div>';
  var art=await fetchStoryArt(osis,chapter);
  if(!document.getElementById('bibleVisual'))return;
- if(art)host.innerHTML='<img class="storyArtImage" src="'+esc(art.url)+'" alt="'+esc(label)+'"><div class="storyArtOverlay"><small>VISUAL ANCHOR</small><strong>'+esc(label)+'</strong><span>Public-domain artwork via Wikimedia Commons</span></div>';
+ if(art)host.innerHTML='<img class="storyArtImage" src="'+esc(art.url)+'" alt="'+esc(label)+'"><div class="storyArtOverlay"><small>VISUAL ANCHOR</small><strong>'+esc(label)+'</strong><span>Original Selah illustration · modern storybook style</span></div>';
  else host.innerHTML='<div class="storyArtFallback"><small>VISUAL ANCHOR</small><strong>'+esc(label)+'</strong><span>No suitable public-domain artwork was found yet. The text remains the source.</span></div>';
 }
 
