@@ -3,6 +3,125 @@ mark4:{book:'Mark',ref:'4:35–41',title:'Jesus calms the storm',genre:'Gospel n
 psalm23:{book:'Psalms',ref:'23',title:'The Lord as shepherd',genre:'Poetry / psalm',text:[['1','Yahweh is my shepherd; I shall lack nothing.'],['2','He makes me lie down in green pastures. He leads me beside still waters.'],['3','He restores my soul. He guides me in the paths of righteousness for his name’s sake.'],['4','Even though I walk through the valley of the shadow of death, I will fear no evil, for you are with me. Your rod and your staff, they comfort me.'],['5','You prepare a table before me in the presence of my enemies. You anoint my head with oil. My cup runs over.'],['6','Surely goodness and loving kindness shall follow me all the days of my life, and I will dwell in Yahweh’s house forever.']]},
 phil2:{book:'Philippians',ref:'2:1–11',title:'The way of Christ',genre:'Epistle / hymn-like passage',text:[['1','If there is therefore any exhortation in Christ, any consolation of love, any fellowship of the Spirit, any tender mercies and compassion,'],['2','make my joy full by being like-minded, having the same love, being of one accord, of one mind;'],['3','doing nothing through rivalry or through conceit, but in humility, each counting others better than himself;'],['4','each of you not just looking to his own things, but each of you also to the things of others.'],['5','Have this in your mind, which was also in Christ Jesus,'],['6','who, existing in the form of God, didn’t consider equality with God a thing to be grasped,'],['7','but emptied himself, taking the form of a servant, being made in the likeness of men.'],['8','Being found in human form, he humbled himself, becoming obedient to death, yes, the death of the cross.'],['9','Therefore God also highly exalted him, and gave to him the name which is above every name,'],['10','that at the name of Jesus every knee should bow, of those in heaven, on earth, and under the earth,'],['11','and that every tongue should confess that Jesus Christ is Lord, to the glory of God the Father.']]}}
 var passageArt={mark4:'https://upload.wikimedia.org/wikipedia/commons/f/f3/Rembrandt_Christ_in_the_Storm_on_the_Lake_of_Galilee.jpg',psalm23:'https://upload.wikimedia.org/wikipedia/commons/1/1f/Eastman_Johnson%2C_The_Lord_is_My_Shepherd.jpg',phil2:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Bifolio_from_Paul%27s_Letter_to_the_Romans%2C_the_end_of_Paul%27s_Letter_to_the_Philippians_and_the_beginning_of_Paul%27s_Letter_to_the_Colossians.jpg'};
+var bibleVisualThemes={
+Gen:'creation, patriarchs, Abraham, Isaac, Jacob, Joseph',
+Exod:'Moses, Exodus, plagues, Passover, Red Sea, Sinai, tabernacle',
+Lev:'Levitical worship, priests, sacrifice, holiness, tabernacle',
+Num:'Israel wilderness, Moses, desert journey, twelve spies, Balaam',
+Deut:'Moses, covenant, law, wilderness, promised land',
+Josh:'Joshua, Jordan River, Jericho, conquest of Canaan',
+Judg:'Judges of Israel, Deborah, Gideon, Samson, ancient Israel',
+Ruth:'Ruth, Naomi, Boaz, Bethlehem, harvest',
+'1Sam':'Samuel, Saul, David, Goliath, ancient Israel',
+'2Sam':'David king, Jerusalem, Bathsheba, ark, ancient Israel',
+'1Kgs':'Solomon, temple, Elijah, Ahab, ancient Israel',
+'2Kgs':'Elijah, Elisha, Israel, Judah, Assyria, Babylon',
+'1Chr':'David, Jerusalem, temple worship, Israel genealogy',
+'2Chr':'Solomon, temple, kings of Judah, Jerusalem, exile',
+Ezra:'Ezra, Jerusalem, temple restoration, return from exile',
+Neh:'Nehemiah, Jerusalem walls, rebuilding, ancient Jerusalem',
+Esth:'Esther, Mordecai, Persian palace, Ahasuerus',
+Job:'Job, suffering, wisdom, whirlwind, ancient wisdom literature',
+Ps:'Psalms, prayer, worship, shepherd, temple, ancient Israel',
+Prov:'Proverbs, wisdom, instruction, ancient Israel',
+Eccl:'Ecclesiastes, wisdom, vanity, teacher, ancient world',
+Song:'Song of Songs, bride and groom, garden, ancient love poetry',
+Isa:'Isaiah, prophet, Jerusalem, temple, servant, vision',
+Jer:'Jeremiah, prophet, Jerusalem, scroll, Babylon',
+Lam:'Jerusalem ruins, lament, grief, exile',
+Ezek:'Ezekiel, prophet, visions, temple, wheels, exile',
+Dan:'Daniel, Babylon, lions den, furnace, visions',
+Hos:'Hosea, prophet, marriage, Israel',
+Joel:'Joel, prophet, locusts, Day of the Lord',
+Amos:'Amos, prophet, justice, Israel, shepherd',
+Obad:'Obadiah, Edom, Jerusalem, prophecy',
+Jonah:'Jonah, Nineveh, whale, prophet',
+Mic:'Micah, prophet, justice, Bethlehem, Jerusalem',
+Nah:'Nahum, Nineveh, Assyria, prophecy',
+Hab:'Habakkuk, prophet, questions, watchtower',
+Zeph:'Zephaniah, prophet, Day of the Lord, Jerusalem',
+Hag:'Haggai, prophet, temple rebuilding, Jerusalem',
+Zech:'Zechariah, prophet, visions, Jerusalem, temple',
+Mal:'Malachi, prophet, temple, covenant',
+Matt:'Jesus, Gospel, Galilee, Jerusalem, disciples, miracles',
+Mark:'Jesus, Gospel, Galilee, disciples, miracles, cross',
+Luke:'Jesus, Gospel, parables, compassion, Jerusalem',
+John:'Jesus, Gospel, signs, Jerusalem, disciples',
+Acts:'apostles, Pentecost, Peter, Paul, early church, missionary journeys',
+Rom:'Paul, Romans, gospel, faith, righteousness, church',
+'1Cor':'Paul, Corinth, church, communion, resurrection',
+'2Cor':'Paul, Corinth, ministry, apostleship, comfort',
+Gal:'Paul, Galatians, freedom, faith, law',
+Eph:'Paul, Ephesians, church, unity, armor of God',
+Phil:'Paul, Philippians, joy, humility, Christ',
+Col:'Paul, Colossians, Christ, church, new life',
+'1Thess':'Paul, Thessalonians, church, hope, return of Christ',
+'2Thess':'Paul, Thessalonians, perseverance, day of the Lord',
+'1Tim':'Paul, Timothy, church leadership, pastoral instruction',
+'2Tim':'Paul, Timothy, endurance, Scripture',
+Titus:'Paul, Titus, Crete, church leadership',
+Phlm:'Paul, Philemon, Onesimus, reconciliation',
+Heb:'Jesus, Hebrews, high priest, faith, tabernacle',
+Jas:'James, wisdom, faith, works, Christian life',
+'1Pet':'Peter, suffering, hope, church, exile',
+'2Pet':'Peter, false teachers, day of the Lord',
+'1John':'John, love, light, fellowship, Christian life',
+'2John':'John, truth, love, Christian community',
+'3John':'John, hospitality, Christian community',
+Jude:'Jude, false teachers, faith, Christian community',
+Rev:'Revelation, John, Patmos, throne, lamb, visions, new creation'
+};
+var bibleStoryRanges={
+Gen:[[1,2,'creation'],[3,3,'fall of humanity'],[4,4,'Cain and Abel'],[5,5,'genealogy of Adam'],[6,9,'Noah and the flood'],[10,11,'nations and Tower of Babel'],[12,12,'Abraham called by God'],[13,14,'Abraham and Lot'],[15,15,'Abraham covenant'],[16,16,'Hagar and Ishmael'],[18,19,'Abraham and Sodom'],[21,22,'Isaac and the binding of Isaac'],[23,24,'Sarah burial and Rebekah'],[25,27,'Jacob and Esau'],[28,31,'Jacob and Laban'],[32,33,'Jacob wrestles with God and meets Esau'],[34,36,'Jacob family and Esau'],[37,37,'Joseph sold by his brothers'],[38,38,'Judah and Tamar'],[39,40,'Joseph in Egypt'],[41,41,'Joseph interprets Pharaoh dreams'],[42,45,'Joseph and his brothers'],[46,47,'Jacob goes to Egypt'],[48,50,'Jacob blessings and Joseph death']],
+Exod:[[1,2,'Israel enslaved and Moses birth'],[3,4,'burning bush and Moses called'],[5,6,'Moses before Pharaoh'],[7,12,'plagues and Passover'],[13,15,'Exodus and Red Sea'],[16,18,'manna, water, and wilderness'],[19,24,'Mount Sinai covenant'],[25,31,'tabernacle instructions'],[32,34,'golden calf and covenant renewed'],[35,40,'tabernacle built']],
+Josh:[[1,2,'Joshua and Rahab'],[3,4,'crossing the Jordan'],[5,6,'Jericho'],[7,8,'Achan and Ai'],[9,10,'Gibeon and southern campaign'],[11,12,'conquest of Canaan'],[13,21,'land allotment'],[22,22,'altar east of Jordan'],[23,24,'Joshua farewell and covenant']],
+Judg:[[1,2,'Israel and the judges'],[3,3,'Othniel Ehud and Shamgar'],[4,5,'Deborah and Barak'],[6,8,'Gideon'],[9,9,'Abimelech'],[10,12,'Jephthah'],[13,16,'Samson'],[17,18,'Micah and Dan'],[19,21,'civil war and Benjamin']],
+Ruth:[[1,1,'Ruth and Naomi'],[2,2,'Ruth and Boaz in the fields'],[3,3,'Ruth at the threshing floor'],[4,4,'Boaz redeems Ruth']],
+'1Sam':[[1,3,'Samuel and Eli'],[4,7,'ark and Samuel leads Israel'],[8,12,'Israel asks for a king and Saul'],[13,15,'Saul and Samuel'],[16,16,'David anointed'],[17,17,'David and Goliath'],[18,20,'David and Saul'],[21,27,'David flees Saul'],[28,31,'Saul and the end of his reign']],
+'2Sam':[[1,5,'David becomes king'],[6,6,'ark brought to Jerusalem'],[7,10,'Davidic covenant and kingdom'],[11,12,'David and Bathsheba'],[13,18,'Absalom rebellion'],[19,24,'David restored and final years']],
+'1Kgs':[[1,2,'Solomon becomes king'],[3,4,'Solomon wisdom'],[5,8,'Solomon builds the temple'],[9,11,'Solomon kingdom and decline'],[12,14,'kingdom divided'],[15,16,'kings of Israel and Judah'],[17,19,'Elijah and Mount Carmel'],[20,22,'Ahab and Naboth']],
+'2Kgs':[[1,2,'Elijah taken up and Elisha'],[3,8,'Elisha miracles'],[9,10,'Jehu'],[11,12,'Joash and temple repair'],[13,17,'Israel falls to Assyria'],[18,20,'Hezekiah and Isaiah'],[21,23,'Manasseh and Josiah'],[24,25,'Judah falls and Jerusalem destroyed']],
+Esth:[[1,2,'Esther becomes queen'],[3,4,'Haman plot and Mordecai'],[5,7,'Esther confronts Haman'],[8,10,'deliverance and Purim']],
+Dan:[[1,1,'Daniel and friends in Babylon'],[2,2,'Nebuchadnezzar dream'],[3,3,'fiery furnace'],[4,4,'Nebuchadnezzar humbled'],[5,5,'writing on the wall'],[6,6,'Daniel in the lions den'],[7,12,'Daniel visions']],
+Jonah:[[1,1,'Jonah and the great fish'],[2,2,'Jonah prayer'],[3,3,'Nineveh repents'],[4,4,'Jonah and Gods mercy']],
+Matt:[[1,2,'birth of Jesus'],[3,4,'baptism and temptation'],[5,7,'Sermon on the Mount'],[8,9,'healings and miracles'],[10,10,'Jesus sends the twelve'],[11,13,'parables and opposition'],[14,17,'miracles and Peter'],[18,18,'community and forgiveness'],[19,20,'kingdom and discipleship'],[21,23,'Jerusalem and conflict'],[24,25,'Olivet discourse'],[26,27,'last supper and crucifixion'],[28,28,'resurrection']],
+Mark:[[1,1,'Jesus begins ministry'],[2,3,'healings and conflict'],[4,4,'parables and calming the storm'],[5,5,'healings and Jairus daughter'],[6,6,'feeding five thousand'],[7,8,'teaching and miracles'],[9,9,'transfiguration'],[10,10,'discipleship and Jerusalem journey'],[11,13,'Jerusalem and temple'],[14,15,'last supper and crucifixion'],[16,16,'resurrection']],
+Luke:[[1,2,'birth of Jesus'],[3,4,'baptism and temptation'],[5,6,'calling disciples and teaching'],[7,8,'healings and parables'],[9,9,'transfiguration'],[10,10,'Good Samaritan and mission'],[11,13,'prayer and kingdom'],[14,16,'parables of Jesus'],[17,19,'faith and journey to Jerusalem'],[20,21,'Jerusalem teaching'],[22,23,'last supper and crucifixion'],[24,24,'resurrection']],
+John:[[1,1,'Word becomes flesh'],[2,4,'signs and conversations'],[5,6,'healings and bread of life'],[7,8,'teaching in Jerusalem'],[9,10,'blind man and good shepherd'],[11,12,'Lazarus and entry into Jerusalem'],[13,17,'last supper and farewell discourse'],[18,19,'trial and crucifixion'],[20,21,'resurrection and restoration']],
+Acts:[[1,2,'ascension and Pentecost'],[3,5,'apostles and early church'],[6,7,'Stephen'],[8,9,'Philip and Paul conversion'],[10,12,'Peter and Gentiles'],[13,14,'Paul first journey'],[15,15,'Jerusalem council'],[16,18,'Paul in Macedonia and Corinth'],[19,20,'Paul in Ephesus'],[21,23,'Paul arrested in Jerusalem'],[24,26,'Paul before governors and Agrippa'],[27,28,'shipwreck and Rome']]
+};
+var visualCache=safeJSON('selahVisualCache',{});
+async function fetchStoryArt(osis,chapter){
+ var key=osis+'-'+chapter;
+ if(visualCache[key])return visualCache[key];
+ var book=bibleBooks.find(function(b){return b[0]===osis});
+ var range=(bibleStoryRanges[osis]||[]).find(function(r){return chapter>=r[0]&&chapter<=r[1]});
+ var story=range?range[2]:bibleVisualThemes[osis];
+ var query=(book?book[1]+' ':'')+story+' biblical art painting';
+ try{
+  var url='https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch='+encodeURIComponent(query)+'&gsrnamespace=6&gsrlimit=6&prop=imageinfo&iiprop=url|extmetadata&iiurlwidth=1200&format=json&origin=*';
+  var r=await fetch(url);if(!r.ok)throw new Error('art search failed');
+  var data=await r.json(),pages=data.query&&data.query.pages?Object.values(data.query.pages):[];
+  var page=pages.find(function(p){return p.imageinfo&&p.imageinfo[0]&&p.imageinfo[0].thumburl})||pages.find(function(p){return p.imageinfo&&p.imageinfo[0]&&p.imageinfo[0].url});
+  if(!page)return null;
+  var info=page.imageinfo[0],title=(page.title||'').replace(/^File:/,'');
+  var item={url:info.thumburl||info.url,title:title,source:info.descriptionurl||'https://commons.wikimedia.org/'};
+  visualCache[key]=item;localStorage.setItem('selahVisualCache',JSON.stringify(visualCache));return item;
+ }catch(e){console.warn('Selah visual search failed',e);return null}
+}
+function visualStoryLabel(osis,chapter){
+ var book=bibleBooks.find(function(b){return b[0]===osis}),range=(bibleStoryRanges[osis]||[]).find(function(r){return chapter>=r[0]&&chapter<=r[1]});
+ return range?range[2]:(book?book[1]+' · chapter '+chapter:'Bible passage');
+}
+async function loadBibleVisual(osis,chapter){
+ var host=document.getElementById('bibleVisual');if(!host)return;
+ var label=visualStoryLabel(osis,chapter);host.innerHTML='<div class="storyArtLoading"><span>Finding a visual anchor…</span></div>';
+ var art=await fetchStoryArt(osis,chapter);
+ if(!document.getElementById('bibleVisual'))return;
+ if(art)host.innerHTML='<img class="storyArtImage" src="'+esc(art.url)+'" alt="'+esc(label)+'"><div class="storyArtOverlay"><small>VISUAL ANCHOR</small><strong>'+esc(label)+'</strong><span>Public-domain artwork via Wikimedia Commons</span></div>';
+ else host.innerHTML='<div class="storyArtFallback"><small>VISUAL ANCHOR</small><strong>'+esc(label)+'</strong><span>No suitable public-domain artwork was found yet. The text remains the source.</span></div>';
+}
+
 var steps=[['Observe','What is actually there? Look for repeated words, contrasts, movement, characters, commands, questions, and changes.'],['Context','What surrounds the passage? Who is speaking, to whom, where does it sit in the book, and what problem or theme is developing?'],['Interpret','What is the author communicating? Separate what the text says from what you infer.'],['Connect','How does this passage fit the book, the wider biblical story, and what Scripture says elsewhere?'],['Respond','What should change in your thinking, worship, relationships, habits, or hope because of what you understood?'],['Remember','Can you explain the passage without looking? Retrieval turns study into durable knowledge.']];
 var SUPABASE_URL='https://leegczvntkjniwqiphgw.supabase.co';
 var SUPABASE_KEY='sb_publishable_oL48CchLp6RwHNlOUPNNkw_FXEbOWVp';
