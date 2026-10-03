@@ -93,7 +93,6 @@ Acts:[[1,2,'ascension and Pentecost'],[3,5,'apostles and early church'],[6,7,'St
 var visualCache=safeJSON('selahVisualCache',{});
 async function selahHash(str){var h=2166136261;for(var i=0;i<str.length;i++){h^=str.charCodeAt(i);h=Math.imul(h,16777619)}return (h>>>0)}
 function selahIllustration(osis,chapter,customStory){
- var book=bibleBooks.find(function(b){return b[0]===osis});
  var range=(bibleStoryRanges[osis]||[]).find(function(r){return chapter>=r[0]&&chapter<=r[1]});
  var story=customStory||((range&&range[2])||bibleVisualThemes[osis]||'Bible story');
  var seed=selahHash(osis+'-'+chapter+'-'+story),pick=seed%6;
@@ -123,7 +122,6 @@ function selahIllustration(osis,chapter,customStory){
 }
 function fetchStoryArt(osis,chapter){
  var key=osis+'-'+chapter;
- var book=bibleBooks.find(function(b){return b[0]===osis});
  var range=(bibleStoryRanges[osis]||[]).find(function(r){return chapter>=r[0]&&chapter<=r[1]});
  var story=(range&&range[2])||bibleVisualThemes[osis]||'Bible story';
  var item={url:selahIllustration(osis,chapter,story),title:story,source:'selah-local'};
